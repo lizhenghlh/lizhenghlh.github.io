@@ -12,7 +12,7 @@
     
     <title>
         
-            about | 
+            Docker环境搭建 | 
         
         Damon Lee &#39;s blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Damon Lee">
     <meta name="description" itemprop="description" content="一枚程序猿的日常">
-    <meta name="keywords" content="Java Android Devops Geek Docker">
+    <meta name="keywords" content="Java Android Devops Geek Docker,Docker">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="about | Damon Lee &#39;s blog">
+    <meta property="og:title" content="Docker环境搭建 | Damon Lee &#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="一枚程序猿的日常">
-    
+    <meta property="og:article:tag" content="Docker"> 
 
+    
+        <meta property="article:published_time" content="7月 20, 2018" />
+        <meta property="article:modified_time" content="7月 20, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="about | Damon Lee &#39;s blog">
+    <meta name="twitter:title" content="Docker环境搭建 | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/about/index.html" />
+        <link rel="canonical" href="http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Damon Lee &#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Damon Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Taik is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
+    },
+    "headline": "Docker环境搭建",
+    "url": "http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html",
+    "datePublished": "7月 20, 2018",
+    "dateModified": "7月 20, 2018",
+    "description": "一枚程序猿的日常",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lizhenghlh.github.io"
+    }
+}
+</script>
 
 
     
@@ -275,6 +308,43 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答-”Docker“。"><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答:”Docker“。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。"><span class="post-toc-number">1.0.0.0.2.</span> <span class="post-toc-text">什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker："><span class="post-toc-number">1.0.0.0.3.</span> <span class="post-toc-text">关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#场景1"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">场景1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。"><span class="post-toc-number">2.0.1.0.1.</span> <span class="post-toc-text">还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下"><span class="post-toc-number">2.0.1.0.2.</span> <span class="post-toc-text">如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。"><span class="post-toc-number">2.0.1.0.3.</span> <span class="post-toc-text">好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下"><span class="post-toc-number">2.0.1.0.4.</span> <span class="post-toc-text">假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个密码为123456，端口为5432的postgres服务就有了。"><span class="post-toc-number">2.0.1.0.5.</span> <span class="post-toc-text">一个密码为123456，端口为5432的postgres服务就有了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。"><span class="post-toc-number">2.0.1.0.6.</span> <span class="post-toc-text">当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#场景3"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">场景3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。"><span class="post-toc-number">2.0.2.0.1.</span> <span class="post-toc-text">现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Docker官网文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Docker官网文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子"><span class="post-toc-number">3.0.0.0.1.</span> <span class="post-toc-text">因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。"><span class="post-toc-number">4.0.0.0.1.</span> <span class="post-toc-text">今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
 
 <!-- Layouts -->
 
@@ -301,7 +371,7 @@
         
     
             <p class="article-headline-p">
-                about
+                Docker环境搭建
             </p>
         </div>
 
@@ -320,7 +390,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Damon Lee</strong>
-        <span>6月 03, 2018</span>
+        <span>7月 20, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -342,7 +412,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aS27DMAwFQN//0u0Bijjv6Rc3GK8CNFY1WogMyevnq58LDw8PDw8PDw/vYbwrft4s+uKb+Zrtuy/XwcPDwzvCS7ae/HXsgP6uMLM3PDw8vJO8VxvKv5O8dR8GZvaGh4eH92Re8vk+JCQhBA8PD++beG1xoS1A4OHh4f0XXlssyDc0E2CO1lrw8PDwYl7eZDr/+Wh/Dw8PDy/g1SNNQ8lxMhzwiJkyPDw8vIA33/i/DzPzza16EAEPDw9vM2/m6k8u92QIdSaQ1Ck1Hh4e3hFeu4l8nR1jrHh4eHhneMnLSbJbbyVO2adSajw8PLylvHacdKYIO5ZG5+/i4eHhneEl13eS4LYl11XDrFExAg8PD28DL4clGxorMbSl5CIw4OHh4W3mJRd60uxvG2BjSTkeHh7eed6qlLdNoGeO7E3QwsPDw9vMmymzjqXabekhb7zh4eHhneTlo1HLNhEXhesghIeHh3eEN1aibS/3scZYfmR4eHh4Z3j5OGnb3MpbXHkxYtlMGR4eHt5mXjtMkJcbxo5mQZUaDw8PbymvuIIXDRm0pZCplBoPDw9vKW+sQdUWJsYCT3KgeHh4eJ/i5f8sT3bb0m2eoBcpNR4eHt4i3r5NjzWxxo4ADw8P7yTvip+xt9rh1/vCRBRm8PDw8I7wZoLB2BU/P4xV/2LAw8PD28Brm1JtkSIPFe0wFh4eHt7zeauKsGNrvmmq4eHh4T2eFzWlytWmwg8eHh7eQV5SjMgPom2Atek1Hh4e3md5M02s/DjyYNAGGzw8PLyTvO978PDw8PDw8PDwHvD8Amcz2YWMReo5AAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aMXLDMAwEQP3/00mbIpIPgBLL5KrKjG2KywYBjsfXls+BjY2NjY2NjY2N/Uj2ET8/v//LoiffPPv+2QpnbzlbOdkzNjY29g7syYauN3qNT7ab7+HFfrCxsbE3YOdFKylOp4UkLk69YoaNjY2Nfb1E4V//uKXJ18TGxsbGvquAJSXqesw0aVGwsbGxsSdDpWRgVC1m+RvfNkvDxsbGfjy7F/S+9++35dvY2NjYD2NXn7vajK9/f7CxsbFXZSchazI86kW8+dCqF/1iY2Nj78DuBQN3bW4+NiqEGdjY2NiLspPy07uUk4eyyUH0VsDGxsbejZ0XlfwSz10r5CtjY2Nj78yeB8D5p9WRUH4o5VkaNjY29hLs3nXGvGHoRQ6TUBkbGxt7N/Y15sWwJj64eUiQfNqMB7CxsbE/lv13hScf91QPKw8tsLGxsXdj54OeXsTba12SY02KKDY2Nvaq7IRX3e5k0/PfllMRbGxs7CXY83F8L0K4Pvr8ik/ULGFjY2Mvyq6+LI8KkqOsjod662BjY2Ovzc63lQyh8lI0L5zlxgkbGxt7afaEkbcW1dig18yU4wFsbGzsD2f3BjR5q1BtY6rxc+HSDzY2Nvai7KQgzbfSa2yqh9VMRbCxsbE/nD0JYvPhUW/T9x4oNjY29g7sHq96iMl7q61O+fIlNjY29tLsSdTaY+fh8WQ4hY2Njb0quzxkb12vrP622uREb8fGxsZelJ1vK//VvXFCvrfyUAkbGxt7OXavgM0xUUxbbGYKBQwbGxv7w9lH/OTxbd4eJKFyHjw3byphY2NjL8GeNA9H8ZmEuDcXMGxsbOzl2L2Lj3kw3CuBk4EXNjY2NnbeBvQCg/mR5YMtbGxsbOzqYGgyTsrblcIRY2NjY2/ATsrMvWFADq6OorCxsbF3Y1fH+nlbkh9KtVDle8bGxsZem73Pg42NjY2NjY2Njf2Y5xss20lLmxyIAAAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -355,7 +425,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        
+        <a class="post_tag-link" href="/tags/Docker/">Docker</a>
     </ul>
     
 
@@ -371,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=about&url=http://lizhenghlh.github.io/about/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker环境搭建&url=http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -380,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=about&url=http://lizhenghlh.github.io/about/index.html&via=Damon Lee" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker环境搭建&url=http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html&via=Damon Lee" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -389,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/about/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -398,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/about/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -410,7 +480,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=about&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/favicon.png&url=http://lizhenghlh.github.io/about/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=Docker环境搭建&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/favicon.png&url=http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -419,7 +489,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/about/index.html&text=about" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2018/07/20/Docker环境搭建/index.html&text=Docker环境搭建" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -434,117 +504,43 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><ul>
-<li><p><strong>一枚生命不息，折腾不止的程序猿。</strong></p>
-</li>
-<li><p><strong>现在主要从事Android，Java Web，Devops工作。</strong></p>
-</li>
-<li><p><strong>崇尚万物基于Linux。</strong></p>
-</li>
-<li><p><strong>热爱互联网，热爱编程，喜欢挑战新技术。</strong></p>
-</li>
-<li><p><strong>梦想是全栈工程师</strong></p>
-</li>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h5 id="相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答-”Docker“。"><a href="#相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答-”Docker“。" class="headerlink" title="相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答:”Docker“。"></a>相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答:”<strong><em>Docker</em></strong>“。</h5><h5 id="什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。"><a href="#什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。" class="headerlink" title="什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。"></a>什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。</h5><h5 id="关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker："><a href="#关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker：" class="headerlink" title="关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker："></a>关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker：</h5><ul>
+<li><strong>方便部署、交付、迁移、测试，总结起来就是方便持续集成持续交付部署。</strong></li>
+<li><strong>启动迅速，秒级的启动速度远远胜过了虚拟机，启动后占用的系统资源也更少。</strong></li>
 </ul>
-<h3 id="工作技能树"><a href="#工作技能树" class="headerlink" title="工作技能树"></a>工作技能树</h3><ul>
-<li><strong>Android</strong><ul>
-<li><strong>GPS</strong></li>
-<li><strong>LBS</strong></li>
-<li><strong>电商</strong></li>
-<li><strong>环信</strong></li>
-<li><strong>支付(微信，支付宝)</strong></li>
-<li><strong>混合开发</strong></li>
-<li><strong>反编译</strong></li>
-</ul>
+<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><h3 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h3><h5 id="还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。"><a href="#还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。" class="headerlink" title="还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。"></a>还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。</h5><h5 id="如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下"><a href="#如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下" class="headerlink" title="如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下"></a>如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql</span><br><span class="line">docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br></pre></td></tr></table></figure>
+<h5 id="好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。"><a href="#好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。" class="headerlink" title="好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。"></a>好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。</h5><hr>
+<h5 id="假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下"><a href="#假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下" class="headerlink" title="假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下"></a>假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以<strong>PostgreSQL</strong>为例，这时候你只要执行下</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull postgres</span><br><span class="line">docker run -p 5432:5432 -e POSTGRES_PASSWORD=123456 -d postgres</span><br></pre></td></tr></table></figure>
+<h5 id="一个密码为123456，端口为5432的postgres服务就有了。"><a href="#一个密码为123456，端口为5432的postgres服务就有了。" class="headerlink" title="一个密码为123456，端口为5432的postgres服务就有了。"></a>一个密码为123456，端口为5432的postgres服务就有了。</h5><h5 id="当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。"><a href="#当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。" class="headerlink" title="当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。"></a>当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。</h5><h3 id="场景3"><a href="#场景3" class="headerlink" title="场景3"></a>场景3</h3><h5 id="现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。"><a href="#现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。" class="headerlink" title="现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。"></a>现在后端最火的技术当属<a href="https://baike.baidu.com/item/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/18705784?fr=aladdin" target="_blank" rel="noopener">微服务</a>了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。</h5><h1 id="安装Docker官网文档"><a href="#安装Docker官网文档" class="headerlink" title="安装Docker官网文档"></a>安装Docker<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#docker-ee-customers" target="_blank" rel="noopener">官网文档</a></h1><h5 id="因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子"><a href="#因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子" class="headerlink" title="因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子"></a>因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子</h5><ol>
+<li><p>更新安装源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>Java Web</strong>  <ul>
-<li><strong>Spring Boot </strong></li>
-<li><strong>Spring Cloud微服务全家桶 </strong></li>
-<li><strong>Restful</strong></li>
-<li><strong>Http</strong></li>
-<li><strong>MyBatis</strong> </li>
-<li><strong>Tomcat</strong></li>
-<li><strong>Swagger</strong></li>
-<li><strong>Api 加密</strong></li>
-<li><strong>数据库</strong></li>
-<li><strong>微信公众号开发</strong></li>
-</ul>
+<li><p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>Devops</strong> <ul>
-<li><strong>Linux </strong><ul>
-<li><strong>日常维护</strong></li>
-<li><strong>各语言环境搭建</strong></li>
-<li><strong>Shell脚本</strong></li>
-<li><strong>Nginx</strong></li>
-</ul>
+<li><p>添加GPG key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>Github , Gitbucket , GitLab </strong><ul>
-<li><strong>通过WebHook实现持续集成</strong></li>
-</ul>
+<li><p>验证GPG key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key fingerprint 0EBFCD88</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>Jenkins</strong><ul>
-<li><strong>Android自动构建</strong></li>
-<li><strong>iOS自动构建</strong></li>
-<li><strong>Web自动构建</strong></li>
-</ul>
+<li><p>添加官方源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>Docker</strong> <ul>
-<li><strong>Dockerfile编写</strong></li>
-<li><strong>Docker-Compose服务编排</strong></li>
-<li><strong>私有仓库搭建</strong></li>
-</ul>
+<li><p>再次更新安装源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>Jira</strong> <ul>
-<li><strong>基于Scrum的敏捷开发管理</strong></li>
-</ul>
+<li><p>安装docker-ce</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>SonarQube</strong> <ul>
-<li><strong>静态代码检查</strong></li>
-</ul>
+<li><p>运行hello-world</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>ELK</strong><ul>
-<li><strong>日志搜集分析</strong></li>
-</ul>
+<li><p>如果屏幕上出现了 “<strong>Hello from Docker!</strong>“ 字样，恭喜你，安装成功。</p>
+<p>如果你以为到了这一步就完事的话，那你真是图样图森破了，由于一些大家都懂得的原因，在国内访问外网的Docker Hub并没有什么速度，好在国内有加速镜像可以配置。我使用的是<a href="https://www.daocloud.io/" target="_blank" rel="noopener">DaoCloud</a>，在这个网站注册后打开<a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="noopener">加速镜像的链接</a>，执行网页上给的命令即可。至此，Docker的安装和配置加速镜像就彻底结束了。</p>
 </li>
-</ul>
-</li>
-</ul>
-<h3 id="生活技能树"><a href="#生活技能树" class="headerlink" title="生活技能树"></a>生活技能树</h3><ul>
-<li><strong>服务器(我个人在家里维护了一台7*24小时的HP Gen8服务器)</strong><ul>
-<li><strong>ESXi</strong><ul>
-<li><strong>HomeLab</strong></li>
-<li><strong>Ubuntu(主要用来给黑群晖提供NFS服务。Docker , Git , 充当测试服务器)</strong></li>
-<li><strong>黑群晖(主要用来混PT和配合玩影音😁)</strong></li>
-<li><strong>软路由(资金充裕了就会开搞)</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>路由器</strong><ul>
-<li><strong>DDNS</strong></li>
-<li><strong>固件编译，烧录</strong></li>
-<li><strong>内网穿透</strong></li>
-<li><strong>端口转发</strong></li>
-</ul>
-</li>
-<li><strong>树莓派</strong><ul>
-<li><strong>游戏系统</strong></li>
-<li><strong>Kodi</strong></li>
-<li><strong>Transmission(IO性能极差)</strong></li>
-<li><strong>NAS(现已迁移到服务器)</strong></li>
-</ul>
-</li>
-<li><strong>有待挖掘的设备</strong><ul>
-<li><strong>天猫精灵(配合博联网关实现控制传统家用电器和开关，设备太贵了，后期慢慢补充)</strong></li>
-<li><strong>小爱同学(超全曲库的哄娃神器，控制小米系智能家居，但是我家目前只有一个小米盒子😂)</strong></li>
-<li><strong>Apple TV 4K(作为HomeKit智能家居网关，目前我只是它来Air Play)</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><ul>
-<li>邮箱：<a href="mailto:leezheng0815@gmail.com" target="_blank" rel="noopener">leezheng0815@gmail.com</a></li>
-</ul>
-
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h5 id="今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。"><a href="#今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。" class="headerlink" title="今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。"></a>今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。</h5>
     
 
     
@@ -559,7 +555,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="about/index.html"  ></div>
+<div id="SOHUCS" sid="2018/07/20/Docker环境搭建/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = 'cytI2AR9y';
@@ -588,6 +584,14 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/07/19/Hello Go/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -764,6 +768,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
