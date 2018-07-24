@@ -12,7 +12,7 @@
     
     <title>
         
-            about | 
+            分类: Node | 
         
         Damon Lee &#39;s blog
     </title>
@@ -67,7 +67,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="about | Damon Lee &#39;s blog">
+    <meta property="og:title" content="分类: Node | Damon Lee &#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="一枚程序猿的日常">
     
@@ -75,7 +75,7 @@
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="about | Damon Lee &#39;s blog">
+    <meta name="twitter:title" content="分类: Node | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,7 +83,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/about/index.html" />
+        <link rel="canonical" href="http://lizhenghlh.github.io/categories/Node/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -273,327 +273,102 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
 
+    <!-- Pin on top -->
+    
 
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+        
+    
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2018/07/23/Node小提示/">Node小提示</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            在做开发的过程中，...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2018/07/23/Node小提示/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
+            </div>
+            <div>
+                <strong>Damon Lee</strong>
+                <span>7月 23, 2018</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/Node/">Node</a>
+            </span>
+
+            
+
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span id = "sourceId::2018/07/23/Node小提示/" class = "cy_cmt_count" ></span>条评论
+                </span>
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                about
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Damon Lee</strong>
-        <span>6月 03, 2018</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aS27DMAwFQN//0u0Bijjv6Rc3GK8CNFY1WogMyevnq58LDw8PDw8PDw/vYbwrft4s+uKb+Zrtuy/XwcPDwzvCS7ae/HXsgP6uMLM3PDw8vJO8VxvKv5O8dR8GZvaGh4eH92Re8vk+JCQhBA8PD++beG1xoS1A4OHh4f0XXlssyDc0E2CO1lrw8PDwYl7eZDr/+Wh/Dw8PDy/g1SNNQ8lxMhzwiJkyPDw8vIA33/i/DzPzza16EAEPDw9vM2/m6k8u92QIdSaQ1Ck1Hh4e3hFeu4l8nR1jrHh4eHhneMnLSbJbbyVO2adSajw8PLylvHacdKYIO5ZG5+/i4eHhneEl13eS4LYl11XDrFExAg8PD28DL4clGxorMbSl5CIw4OHh4W3mJRd60uxvG2BjSTkeHh7eed6qlLdNoGeO7E3QwsPDw9vMmymzjqXabekhb7zh4eHhneTlo1HLNhEXhesghIeHh3eEN1aibS/3scZYfmR4eHh4Z3j5OGnb3MpbXHkxYtlMGR4eHt5mXjtMkJcbxo5mQZUaDw8PbymvuIIXDRm0pZCplBoPDw9vKW+sQdUWJsYCT3KgeHh4eJ/i5f8sT3bb0m2eoBcpNR4eHt4i3r5NjzWxxo4ADw8P7yTvip+xt9rh1/vCRBRm8PDw8I7wZoLB2BU/P4xV/2LAw8PD28Brm1JtkSIPFe0wFh4eHt7zeauKsGNrvmmq4eHh4T2eFzWlytWmwg8eHh7eQV5SjMgPom2Atek1Hh4e3md5M02s/DjyYNAGGzw8PLyTvO978PDw8PDw8PDwHvD8Amcz2YWMReo5AAAAAElFTkSuQmCC">
-    
-</ul>
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=about&url=http://lizhenghlh.github.io/about/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=about&url=http://lizhenghlh.github.io/about/index.html&via=Damon Lee" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/about/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/about/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=about&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/favicon.png&url=http://lizhenghlh.github.io/about/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/about/index.html&text=about" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Telegram
-            </li>
-        </a>
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><ul>
-<li><p><strong>一枚生命不息，折腾不止的程序猿。</strong></p>
-</li>
-<li><p><strong>现在主要从事Android，Java Web，Devops工作。</strong></p>
-</li>
-<li><p><strong>崇尚万物基于Linux。</strong></p>
-</li>
-<li><p><strong>热爱互联网，热爱编程，喜欢挑战新技术。</strong></p>
-</li>
-<li><p><strong>梦想是全栈工程师</strong></p>
-</li>
-</ul>
-<h3 id="工作技能树"><a href="#工作技能树" class="headerlink" title="工作技能树"></a>工作技能树</h3><ul>
-<li><strong>Android</strong><ul>
-<li><strong>GPS</strong></li>
-<li><strong>LBS</strong></li>
-<li><strong>电商</strong></li>
-<li><strong>环信</strong></li>
-<li><strong>支付(微信，支付宝)</strong></li>
-<li><strong>混合开发</strong></li>
-<li><strong>反编译</strong></li>
-</ul>
-</li>
-<li><strong>Java Web</strong>  <ul>
-<li><strong>Spring Boot </strong></li>
-<li><strong>Spring Cloud微服务全家桶 </strong></li>
-<li><strong>Restful</strong></li>
-<li><strong>Http</strong></li>
-<li><strong>MyBatis</strong> </li>
-<li><strong>Tomcat</strong></li>
-<li><strong>Swagger</strong></li>
-<li><strong>Api 加密</strong></li>
-<li><strong>数据库</strong></li>
-<li><strong>微信公众号开发</strong></li>
-</ul>
-</li>
-<li><strong>Devops</strong> <ul>
-<li><strong>Linux </strong><ul>
-<li><strong>日常维护</strong></li>
-<li><strong>各语言环境搭建</strong></li>
-<li><strong>Shell脚本</strong></li>
-<li><strong>Nginx</strong></li>
-</ul>
-</li>
-<li><strong>Github , Gitbucket , GitLab </strong><ul>
-<li><strong>通过WebHook实现持续集成</strong></li>
-</ul>
-</li>
-<li><strong>Jenkins</strong><ul>
-<li><strong>Android自动构建</strong></li>
-<li><strong>iOS自动构建</strong></li>
-<li><strong>Web自动构建</strong></li>
-</ul>
-</li>
-<li><strong>Docker</strong> <ul>
-<li><strong>Dockerfile编写</strong></li>
-<li><strong>Docker-Compose服务编排</strong></li>
-<li><strong>私有仓库搭建</strong></li>
-</ul>
-</li>
-<li><strong>Jira</strong> <ul>
-<li><strong>基于Scrum的敏捷开发管理</strong></li>
-</ul>
-</li>
-<li><strong>SonarQube</strong> <ul>
-<li><strong>静态代码检查</strong></li>
-</ul>
-</li>
-<li><strong>ELK</strong><ul>
-<li><strong>日志搜集分析</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="生活技能树"><a href="#生活技能树" class="headerlink" title="生活技能树"></a>生活技能树</h3><ul>
-<li><strong>服务器(我个人在家里维护了一台7*24小时的HP Gen8服务器)</strong><ul>
-<li><strong>ESXi</strong><ul>
-<li><strong>HomeLab</strong></li>
-<li><strong>Ubuntu(主要用来给黑群晖提供NFS服务。Docker , Git , 充当测试服务器)</strong></li>
-<li><strong>黑群晖(主要用来混PT和配合玩影音😁)</strong></li>
-<li><strong>软路由(资金充裕了就会开搞)</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>路由器</strong><ul>
-<li><strong>DDNS</strong></li>
-<li><strong>固件编译，烧录</strong></li>
-<li><strong>内网穿透</strong></li>
-<li><strong>端口转发</strong></li>
-</ul>
-</li>
-<li><strong>树莓派</strong><ul>
-<li><strong>游戏系统</strong></li>
-<li><strong>Kodi</strong></li>
-<li><strong>Transmission(IO性能极差)</strong></li>
-<li><strong>NAS(现已迁移到服务器)</strong></li>
-</ul>
-</li>
-<li><strong>有待挖掘的设备</strong><ul>
-<li><strong>天猫精灵(配合博联网关实现控制传统家用电器和开关，设备太贵了，后期慢慢补充)</strong></li>
-<li><strong>小爱同学(超全曲库的哄娃神器，控制小米系智能家居，但是我家目前只有一个小米盒子😂)</strong></li>
-<li><strong>Apple TV 4K(作为HomeKit智能家居网关，目前我只是它来Air Play)</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><ul>
-<li>邮箱：<a href="mailto:leezheng0815@gmail.com" target="_blank" rel="noopener">leezheng0815@gmail.com</a></li>
-</ul>
-
-    
-
     
 </div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 changyan -->
-<div id="changyan-comment">
-    <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="about/index.html"  ></div>
-<script type="text/javascript">
-(function(){
-var appid = 'cytI2AR9y';
-var conf = 'prod_108d27991d04e452b37e85cfae7daaeb';
-var width = window.innerWidth || document.documentElement.clientWidth;
-if (width < 960) {
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-
-</div>
-<style>
-    #changyan-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-</nav>
-
-        </div>
-    </div>
-
 
 
                     
@@ -764,6 +539,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

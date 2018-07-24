@@ -8,8 +8,28 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Fri, 20 Jul 2018 10:24:04 GMT</pubDate>
+    <pubDate>Tue, 24 Jul 2018 07:38:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Node小提示</title>
+      <link>http://lizhenghlh.github.io/2018/07/23/Node%E5%B0%8F%E6%8F%90%E7%A4%BA/</link>
+      <guid>http://lizhenghlh.github.io/2018/07/23/Node%E5%B0%8F%E6%8F%90%E7%A4%BA/</guid>
+      <pubDate>Mon, 23 Jul 2018 11:40:51 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h5 id=&quot;在做开发的过程中，经常会遇到一些场景使用到Node，比如构建前端项目或者使用Hexo写博客，这批文章主要记录我在使用Node过程中遇到的一些问题和解决方案。&quot;&gt;&lt;a
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2018/07/23/Node%E5%B0%8F%E6%8F%90%E7%A4%BA/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Docker环境搭建</title>
