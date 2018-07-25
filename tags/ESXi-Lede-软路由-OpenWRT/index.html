@@ -12,7 +12,7 @@
     
     <title>
         
-            ESXi下安装Lede软路由 | 
+            标签: ESXi,Lede,软路由,OpenWRT | 
         
         Damon Lee &#39;s blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Damon Lee">
     <meta name="description" itemprop="description" content="一枚程序猿的日常">
-    <meta name="keywords" content="Java Android Devops Geek Docker,ESXi,Lede,软路由,OpenWRT">
+    <meta name="keywords" content="Java Android Devops Geek Docker">
 
     <!-- Site Verification -->
     
@@ -67,18 +67,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="ESXi下安装Lede软路由 | Damon Lee &#39;s blog">
+    <meta property="og:title" content="标签: ESXi,Lede,软路由,OpenWRT | Damon Lee &#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="一枚程序猿的日常">
-    <meta property="og:article:tag" content="ESXi,Lede,软路由,OpenWRT"> 
-
     
-        <meta property="article:published_time" content="7月 26, 2018" />
-        <meta property="article:modified_time" content="7月 25, 2018" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="ESXi下安装Lede软路由 | Damon Lee &#39;s blog">
+    <meta name="twitter:title" content="标签: ESXi,Lede,软路由,OpenWRT | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -86,43 +83,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html" />
+        <link rel="canonical" href="http://lizhenghlh.github.io/tags/ESXi-Lede-软路由-OpenWRT/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "publisher": {
-        "@type": "Organization",
-        "name": "Damon Lee &#39;s blog",
-        "logo": "/img/favicon.png"
-    },
-    "author": {
-        "@type": "Person",
-        "name": "Damon Lee",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/favicon.png"
-        },
-        "description": "Taik is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
-    },
-    "headline": "ESXi下安装Lede软路由",
-    "url": "http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html",
-    "datePublished": "7月 26, 2018",
-    "dateModified": "7月 25, 2018",
-    "description": "一枚程序猿的日常",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://lizhenghlh.github.io"
-    }
-}
-</script>
 
 
     
@@ -306,311 +273,102 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><span class="post-toc-number">1.</span> <span class="post-toc-text">上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><span class="post-toc-number">2.</span> <span class="post-toc-text">现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><span class="post-toc-number">3.</span> <span class="post-toc-text">昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><span class="post-toc-number">4.</span> <span class="post-toc-text">先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><span class="post-toc-number">5.</span> <span class="post-toc-text">至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><span class="post-toc-number">6.</span> <span class="post-toc-text">上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"><span class="post-toc-number">7.</span> <span class="post-toc-text">其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">准备工作</span></a>
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
+    <!-- Pin on top -->
     
 
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
         
     
-            <p class="article-headline-p">
-                ESXi下安装Lede软路由
-            </p>
-        </div>
 
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Damon Lee</strong>
-        <span>7月 26, 2018</span>
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2018/07/26/ESXi下安装Lede软路由/">ESXi下安装Lede软路由</a></p>
     </div>
 
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1UlEQVR42u3ay24cMQwEwP3/n3auAQI73eQAu5ZqTsZiHipdaDb1+rryemFjY2NjY2NjY2N/JPsVX3/fH33mn6fad353T7tmbGxs7BvYM0C+6GS5+y/+5+vY2NjYF7CTAtOy88KTv79dMzY2NjZ2Uoo2v+fPYmNjY2M/VcDaoOfnwpZvKDY2Njb2PlRqBwM/3zMbIbwhS8PGxsb+ePZs0Pvev98238bGxsb+MPbsyge0SfuR37NaMzY2Nvah7PZgTX7/ZkOTEW8eMGFjY2Pfw96Xmdlxn03AlEda2NjY2Key88+3DUm+iZtyVTyLjY2NfSg7eSAPmPKN2wyPZyUWGxsb+wb2bJhaxDrB0ttBb9ICYWNjY5/NnpWN/Ij8qnkYHcovQiVsbGzsg9ht9JMPXIdLjMtqMdjAxsbGPpSdLK4dJCTjgaSYzQbDq/EANjY29kHsvBloy167ZfloARsbG/tOdtskJGOApwbDs0JVd2DY2NjYR7CTLciD/lmrkwDag6HY2NjYN7BnpasNhjbNT/sUNjY29p3sfLyaNwxt+5E3LbOoCxsbG/tUdjsGSJbYthD5EZ9V6cXGxsY+lJ1HSE8dwcxL1Gasi42NjY3dxkltuL/ZgmSDHsvSsLGxsT+e3cLaxc2KzWajv/0dGxsb+1B2MmSdHcFpn90MAB6YimBjY2P/cvZT//Tnb8vj/nZbvw28sLGxsY9mPxDZjKKor9E1LJbY2NjY17DzUpQUkrxpaUtp3a5gY2NjH8qeFY8kHtqUsVmBHE5FsLGxsX85ez/ETQax+yLUDn3rLA0bGxv7l7PzgKZd6GYwnDcwq1AJGxsb+yB2PhhI7twUm2fjJGxsbGzsPSyPgWbIVSuCjY2NfRm7bUhy/Cz6L9aMjY2NfQF7X3JmUdQsMGpDK2xsbOyz2bNB7yxUagcAeTtUFzBsbGzsI9j3XNjY2NjY2NjY2Ngfc/0BmTsggkm5acUAAAAASUVORK5CYII=">
-    
-</ul>
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/ESXi-Lede-软路由-OpenWRT/">ESXi,Lede,软路由,OpenWRT</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=ESXi下安装Lede软路由&url=http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=ESXi下安装Lede软路由&url=http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html&via=Damon Lee" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=ESXi下安装Lede软路由&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/favicon.png&url=http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html&text=ESXi下安装Lede软路由" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Telegram
-            </li>
-        </a>
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h5 id="上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><a href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。" class="headerlink" title="上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"></a>上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</h5><h5 id="现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><a href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。" class="headerlink" title="现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。"></a>现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</h5><h5 id="昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><a href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。" class="headerlink" title="昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"></a>昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</h5><h5 id="先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><a href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：" class="headerlink" title="先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："></a>先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</h5><ul>
-<li><p><strong><em>酸酸乳</em></strong>(你懂得，走GFW List模式，畅游真正的互联网)</p>
-</li>
-<li><p><strong><em>KoolProxy</em></strong>(过滤广告，看个视频要一分多钟的广告，你能忍吗)</p>
-</li>
-<li><p><strong><em>Aliddns</em></strong>(有公网IP谁还用花生壳和Ngrok)</p>
-</li>
-<li><p><strong><em>自动签到</em></strong>(支持的大多数主流网站，但是不支持PT站，所以后面打算自己写PT站自动签到的shell，通过corntab来执行)</p>
-</li>
-</ul>
-<h5 id="至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><a href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。" class="headerlink" title="至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"></a>至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</h5><h5 id="上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><a href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。" class="headerlink" title="上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"></a>上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</h5><h5 id="其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"><a href="#其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂" class="headerlink" title="其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"></a>其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂</h5><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
-<li><p>打开固件<a href="http://firmware.koolshare.cn/LEDE_X64_fw867/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AC%E7%9B%98%E6%88%96PE%E4%B8%8B%E5%86%99%E7%9B%98%E4%B8%93%E7%94%A8/" target="_blank" rel="noopener">下载链接</a>，选择版本，我下载的是v2.6的版本，下载后解压出img文件。但是安装完之后我才知道Lede已经合并回OpenWrt，所以你可以直接下载OpenWrt的2.15版本。</p>
-</li>
-<li><p>下载StarWind V2V Converter并安装，打开后</p>
-<p><img src="/img/lede/1.png" alt="1"><br><img src="/img/lede/2.png" alt="2"></p>
-<p><img src="/img/lede/3.png" alt="3"></p>
-<p><img src="/img/lede/4.png" alt="4"></p>
-<p><img src="/img/lede/5.png" alt="5"></p>
-<p><img src="/img/lede/6.png" alt="6"></p>
-<p><img src="/img/lede/7.png" alt="7"></p>
-<p>生成了2个文件，这时候登录ESXi的web管理界面，在数据存储浏览器中将刚才生成的文件上传进去，上传完成之后你会发现两个文件变成了一个，这是正常的。</p>
-</li>
-<li><p>在web界面的网络节点中选中vSwitch0，然后点击右边的编辑设置，按下图设置好保存：</p>
-<p><img src="/img/lede/s1.png" alt="s1"></p>
-</li>
-<li><p>添加一个新的虚拟交换机vSwitch1，按下图设置后点击添加：</p>
-<p><img src="/img/lede/s2.png" alt="s2"></p>
-</li>
-<li><p>添加端口组，并关联至vSwitch1，如下图：</p>
-<p><img src="/img/lede/s3.png" alt="s3"></p>
-</li>
-<li><p>注册新的虚拟机，选择<strong>Linux类型</strong>，操作系统选择“<strong>其他Linux 64位</strong>”，删掉默认分配的硬盘，选择我们刚才上传的<strong>lede-v2.6.vmdk</strong>，然后添加新的网络适配器并选择刚才创建的<strong>VM Network1</strong>，然后保存。</p>
-</li>
-<li><p>此时先选中刚刚创建好的lede虚拟机右键—&gt;自动启动—&gt;开启。</p>
-</li>
-<li><p>这时候主要打开虚拟机的电源就好了，然后查看控制台，直到控制台不在刷新的时候敲一下回车，你会看到下图：</p>
-<p><img src="/img/lede/l1.png" alt="l1"></p>
-</li>
-<li><p>距离成功只差一步了，那就是设置路由器的LAN IP ，控制台上键入以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/config</span><br><span class="line">cp network network.bak</span><br><span class="line">vim /etc/config/network</span><br></pre></td></tr></table></figure>
-<p>上述代码的第二步是为了备份配置文件，出错的时候只有恢复下即可，紧接着就是修改IP了，我设置的<code>192.168.0.1</code>，当然你可以根据自己的喜好设置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">config interface <span class="string">'loopback'</span></span><br><span class="line">	option ifname <span class="string">'lo'</span></span><br><span class="line">	option proto <span class="string">'static'</span></span><br><span class="line">	option ipaddr <span class="string">'127.0.0.1'</span></span><br><span class="line">	option netmask <span class="string">'255.0.0.0'</span></span><br><span class="line"></span><br><span class="line">config globals <span class="string">'globals'</span></span><br><span class="line">	option ula_prefix <span class="string">'fd07:0156:b6bb::/48'</span></span><br><span class="line"></span><br><span class="line">config interface <span class="string">'lan'</span></span><br><span class="line">	option <span class="built_in">type</span> <span class="string">'bridge'</span></span><br><span class="line">	option ifname <span class="string">'eth0 eth1 eth2 eth3'</span></span><br><span class="line">	option proto <span class="string">'static'</span></span><br><span class="line">	option ipaddr <span class="string">'192.168.0.1'</span></span><br><span class="line">	option netmask <span class="string">'255.255.255.0'</span></span><br><span class="line">	option ip6assign <span class="string">'60'</span></span><br><span class="line"></span><br><span class="line">config interface <span class="string">'wan'</span></span><br><span class="line">	option ifname <span class="string">'eth4'</span></span><br><span class="line">	option proto <span class="string">'dhcp'</span></span><br><span class="line"></span><br><span class="line">config interface <span class="string">'wan6'</span></span><br><span class="line">	option ifname <span class="string">'eth4'</span></span><br><span class="line">	option proto <span class="string">'dhcpv6'</span></span><br></pre></td></tr></table></figure>
-<p>设置好LAN IP后，还需要重启网络服务，键入如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>万事俱备只欠东风了，最后就是访问<a href="http://192.168.0.1" target="_blank" rel="noopener">http://192.168.0.1</a> ，如果让提示让你输入密码，恭喜你，Lede安装完成，如下图所示：</p>
-<p><img src="/img/lede/l2.png" alt="l2"></p>
-</li>
-</ol>
-
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 changyan -->
-<div id="changyan-comment">
-    <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/26/ESXi下安装Lede软路由/"  ></div>
-<script type="text/javascript">
-(function(){
-var appid = 'cytI2AR9y';
-var conf = 'prod_108d27991d04e452b37e85cfae7daaeb';
-var width = window.innerWidth || document.documentElement.clientWidth;
-if (width < 960) {
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-
-</div>
-<style>
-    #changyan-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-
-                
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2018/07/26/ESXi下安装Lede软路由/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
             </div>
+            <div>
+                <strong>Damon Lee</strong>
+                <span>7月 26, 2018</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/ESXi/">ESXi</a>
+            </span>
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
+            
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span id = "sourceId::2018/07/26/ESXi下安装Lede软路由/" class = "cy_cmt_count" ></span>条评论
+                </span>
+            
 
-    <!-- Next Nav -->
-    
-        <a href="/2018/07/25/http返回200-status却是failed/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
         </div>
     </div>
+</div>
 
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
 
 
                     
@@ -781,14 +539,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
