@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title>ESXi下安装Lede软路由</title>
+      <link href="/2018/07/26/ESXi%E4%B8%8B%E5%AE%89%E8%A3%85Lede%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
+      <url>/2018/07/26/ESXi%E4%B8%8B%E5%AE%89%E8%A3%85Lede%E8%BD%AF%E8%B7%AF%E7%94%B1/</url>
+      <content type="html"><![CDATA[<h5 id="上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><a href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。" class="headerlink" title="上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"></a>上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</h5><h5 id="现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><a href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。" class="headerlink" title="现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。"></a>现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</h5><h5 id="昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><a href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。" class="headerlink" title="昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"></a>昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</h5><h5 id="先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><a href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：" class="headerlink" title="先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："></a>先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</h5><ul><li><p><strong><em>酸酸乳</em></strong>(你懂得，走GFW List模式，畅游真正的互联网)</p></li><li><p><strong><em>KoolProxy</em></strong>(过滤广告，看个视频要一分多钟的广告，你能忍吗)</p></li><li><p><strong><em>Aliddns</em></strong>(有公网IP谁还用花生壳和Ngrok)</p></li><li><p><strong><em>自动签到</em></strong>(支持的大多数主流网站，但是不支持PT站，所以后面打算自己写PT站自动签到的shell，通过corntab来执行)</p></li></ul><h5 id="至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><a href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。" class="headerlink" title="至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"></a>至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</h5><h5 id="上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><a href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。" class="headerlink" title="上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"></a>上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</h5><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol><li><p>打开固件<a href="http://firmware.koolshare.cn/LEDE_X64_fw867/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AC%E7%9B%98%E6%88%96PE%E4%B8%8B%E5%86%99%E7%9B%98%E4%B8%93%E7%94%A8/" target="_blank" rel="noopener">下载链接</a>，选择版本，我下载的是v2.6的版本，下载后解压出img文件。但是安装完之后我才知道Lede已经合并回OpenWrt，所以你可以直接下载OpenWrt的2.15版本。</p></li><li><p>下载StarWind V2V Converter并安装，打开后</p><p><img src="/img/lede/1.png" alt="1"><br><img src="/img/lede/2.png" alt="2"></p><p><img src="/img/lede/3.png" alt="3"></p><p><img src="/img/lede/4.png" alt="4"></p><p><img src="/img/lede/5.png" alt="5"></p><p><img src="/img/lede/6.png" alt="6"></p><p><img src="/img/lede/7.png" alt="7"></p><p>生成了2个文件，这时候登录ESXi的web管理界面，在数据存储浏览器中将刚才生成的文件上传进去，上传完成之后你会发现两个文件变成了一个，这是正常的。</p></li><li><p>在web界面的网络节点中选中vSwitch0，然后点击右边的编辑设置，按下图设置好保存：</p><p><img src="/img/lede/s1.png" alt="s1"></p></li><li><p>添加一个新的虚拟交换机vSwitch1，按下图设置后点击添加：</p><p><img src="/img/lede/s2.png" alt="s2"></p></li><li><p>添加端口组，并关联至vSwitch1，如下图：</p><p><img src="/img/lede/s3.png" alt="s3"></p></li><li><p>注册新的虚拟机，选择<strong>Linux类型</strong>，操作系统选择“<strong>其他Linux 64位</strong>”，删掉默认分配的硬盘，选择我们刚才上传的<strong>lede-v2.6.vmdk</strong>，然后添加新的网络适配器并选择刚才创建的<strong>VM Network1</strong>，然后保存。</p></li><li><p>此时先选中刚刚创建好的lede虚拟机右键—&gt;自动启动—&gt;开启。</p></li><li><p>这时候主要打开虚拟机的电源就好了，然后查看控制台，直到控制台不在刷新的时候敲一下回车，你会看到下图：</p><p><img src="/img/lede/l1.png" alt="l1"></p></li><li><p>距离成功只差一步了，那就是设置路由器的LAN IP ，控制台上键入以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/config</span><br><span class="line">cp network network.bak</span><br><span class="line">vim /etc/config/network</span><br></pre></td></tr></table></figure><p>上述代码的第二步是为了备份配置文件，出错的时候只有恢复下即可，紧接着就是修改IP了，我设置的<code>192.168.0.1</code>，当然你可以根据自己的喜好设置。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">config interface <span class="string">'loopback'</span></span><br><span class="line">option ifname <span class="string">'lo'</span></span><br><span class="line">option proto <span class="string">'static'</span></span><br><span class="line">option ipaddr <span class="string">'127.0.0.1'</span></span><br><span class="line">option netmask <span class="string">'255.0.0.0'</span></span><br><span class="line"></span><br><span class="line">config globals <span class="string">'globals'</span></span><br><span class="line">option ula_prefix <span class="string">'fd07:0156:b6bb::/48'</span></span><br><span class="line"></span><br><span class="line">config interface <span class="string">'lan'</span></span><br><span class="line">option <span class="built_in">type</span> <span class="string">'bridge'</span></span><br><span class="line">option ifname <span class="string">'eth0 eth1 eth2 eth3'</span></span><br><span class="line">option proto <span class="string">'static'</span></span><br><span class="line">option ipaddr <span class="string">'192.168.0.1'</span></span><br><span class="line">option netmask <span class="string">'255.255.255.0'</span></span><br><span class="line">option ip6assign <span class="string">'60'</span></span><br><span class="line"></span><br><span class="line">config interface <span class="string">'wan'</span></span><br><span class="line">option ifname <span class="string">'eth4'</span></span><br><span class="line">option proto <span class="string">'dhcp'</span></span><br><span class="line"></span><br><span class="line">config interface <span class="string">'wan6'</span></span><br><span class="line">option ifname <span class="string">'eth4'</span></span><br><span class="line">option proto <span class="string">'dhcpv6'</span></span><br></pre></td></tr></table></figure><p>设置好LAN IP后，还需要重启网络服务，键入如下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure></li><li><p>万事俱备只欠东风了，最后就是访问<a href="http://192.168.0.1" target="_blank" rel="noopener">http://192.168.0.1</a> ，如果让提示让你输入密码，恭喜你，Lede安装完成，如下图所示：</p><p><img src="/img/lede/l2.png" alt="l2"></p></li></ol>]]></content>
+      
+      <categories>
+          
+          <category> ESXi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ESXi,Lede,软路由 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>http返回200,status却是failed</title>
+      <link href="/2018/07/25/http%E8%BF%94%E5%9B%9E200-status%E5%8D%B4%E6%98%AFfailed/"/>
+      <url>/2018/07/25/http%E8%BF%94%E5%9B%9E200-status%E5%8D%B4%E6%98%AFfailed/</url>
+      <content type="html"><![CDATA[<p><strong>今天刚到公司，就有前端同学说刚部署的前端代码在访问的时候网页一篇空白，我部署了一版一看，还真是这样，再三确认前端同学在本地构建并访问没有任何问题，紧接着微信就响起来了，其他兄弟公司的项目也都出了问题，我赶紧打开网页查看，果然所有网页都是空白，更神奇的是Chrome报了如下的问题：</strong></p><p><img src="/img/za/1.jpeg" alt="status显示failed"><br><img src="/img/za/2.jpeg" alt="http code显示200"><br><strong>文档状态显示failed，但是http状态码确是200。😂</strong><br><strong>这真是奇了怪了，我问后端同学也没人见过这样的问题。</strong></p><p><strong>紧接着我去查看Nginx的log，也没发现什么问题。这时候微信和电话已经开始轮番轰炸了，大家都在问项目怎么访问不了。最后只得一级一级的排查，在最后ssh登录网关机查看Nginx的时候，我刚输入<code>cd</code>，再按tab键补全路径的时候，系统显示如下：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cannot create temp file <span class="keyword">for</span> here-document: No space left on device</span><br></pre></td></tr></table></figure><p><strong>原来是磁盘空间不足了，所以Nginx无法完成中转，直觉告诉我应该是系统内的Docker镜像太多了，当键入<code>docker images</code>的时候，好么，果然问题在这，再删除了一些不用的镜像后，问题解决，所有网站恢复正常。</strong></p>]]></content>
+      
+      <categories>
+          
+          <category> 疑难杂症 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 疑难杂症 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Node小提示</title>
       <link href="/2018/07/23/Node%E5%B0%8F%E6%8F%90%E7%A4%BA/"/>
       <url>/2018/07/23/Node%E5%B0%8F%E6%8F%90%E7%A4%BA/</url>
@@ -17,7 +59,7 @@
       
         <tags>
             
-            <tag> Node </tag>
+            <tag> Node,npm,cnpm,yarn </tag>
             
         </tags>
       
