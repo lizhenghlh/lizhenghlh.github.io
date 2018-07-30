@@ -12,7 +12,7 @@
     
     <title>
         
-            归档 | 
+            corn表达式 | 
         
         Damon Lee &#39;s blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Damon Lee">
     <meta name="description" itemprop="description" content="一枚程序猿的日常">
-    <meta name="keywords" content="Java Android Devops Geek Docker">
+    <meta name="keywords" content="Java Android Devops Geek Docker,corntab,corn,定时任务">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档 | Damon Lee &#39;s blog">
+    <meta property="og:title" content="corn表达式 | Damon Lee &#39;s blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="一枚程序猿的日常">
-    
+    <meta property="og:article:tag" content="corntab,corn,定时任务"> 
 
+    
+        <meta property="article:published_time" content="7月 30, 2018" />
+        <meta property="article:modified_time" content="7月 30, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档 | Damon Lee &#39;s blog">
+    <meta name="twitter:title" content="corn表达式 | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/archives/index.html" />
+        <link rel="canonical" href="http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Damon Lee &#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Damon Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Taik is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
+    },
+    "headline": "corn表达式",
+    "url": "http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html",
+    "datePublished": "7月 30, 2018",
+    "dateModified": "7月 30, 2018",
+    "description": "一枚程序猿的日常",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lizhenghlh.github.io"
+    }
+}
+</script>
 
 
     
@@ -273,428 +306,414 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下-Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。"><span class="post-toc-number">1.</span> <span class="post-toc-text">熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下@Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在了解了corn的表达式语法后可以做些什么："><span class="post-toc-number">2.</span> <span class="post-toc-text">在了解了corn的表达式语法后可以做些什么：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我用corn做了什么："><span class="post-toc-number">3.</span> <span class="post-toc-text">我用corn做了什么：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#corn表达式："><span class="post-toc-number"></span> <span class="post-toc-text">corn表达式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#结构：从左到右-空格隔开-：秒-分-时-日-月-星期-年份-年份可选"><span class="post-toc-number">1.</span> <span class="post-toc-text">结构：从左到右(空格隔开)：秒 分 时 日 月 星期 年份(年份可选)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字段含义："><span class="post-toc-number">2.</span> <span class="post-toc-text">字段含义：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常用表达式样例："><span class="post-toc-number">3.</span> <span class="post-toc-text">常用表达式样例：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。"><span class="post-toc-number">4.</span> <span class="post-toc-text">其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/30/corn表达式/">corn表达式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/30/corn表达式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 30, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Linux/">Linux</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/30/corn表达式/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/26/ESXi下安装Lede软路由/">ESXi下安装Lede软路由</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/26/ESXi下安装Lede软路由/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ESXi/">ESXi</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/26/ESXi下安装Lede软路由/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/25/http返回200-status却是failed/">http返回200,status却是failed</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天刚到公司，就有前端同学说刚部署的前端代码在访问的时候网页一篇空白，我部署了一版一看，还真是这样，再三确认前端同学在本地构建并访问没有任何问题，紧接着微信就响起来了，其他兄弟公司的项目也都出了问题，我赶紧打开网页查看，果然所有网页都是空白，更神奇的是Chrome报了如下的问题：
-文档状态显示failed，但是http...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/25/http返回200-status却是failed/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/疑难杂症/">疑难杂症</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/25/http返回200-status却是failed/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/23/Node小提示/">Node小提示</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            在做开发的过程中，...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/23/Node小提示/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Node/">Node</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/23/Node小提示/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/20/Docker环境搭建/">Docker环境搭建</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/20/Docker环境搭建/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/20/Docker环境搭建/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/19/Hello Go/">Hello Go!</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言要说当下什么语言最火，coder们自然而然就想到了Google爸爸推出的语言Go。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/19/Hello Go/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 19, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Go/">Go</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/19/Hello Go/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                corn表达式
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Damon Lee</strong>
+        <span>7月 30, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC6klEQVR42u3aQU7EMBAEwP3/p+GKhDbbPQ6w2JVTBJLjMhKjmfbj48jngY2NjY2NjY2Njf2W7Ef8PF3u22+//mT2nnyx3TM2Njb23uwX//ovYc82lJPy1Zb2jI2NjX0A+1kBePa+cig5KSmQ13vGxsbGxr5eLl8tX/+6IcHGxsbGXmfnB5E0CQm4PSZsbGzsM9nrZemu2KBd+cdnadjY2Nhvz15pG/7q/VfzbWxsbOw3ZrdP3orM4ttZuYp2jo2Njb0pe9ZmXG/0uhVJCmQbIURXNrGxsbG3ZrdFqL1MMyuTbTzwonBiY2Njb8rOm4d8oNMWs1mLkjdL2NjY2Huz24syd13QSb7ehgH1lR1sbGzsLdjJdpOjaYdE7QpJ2bsh6MXGxsb+h+yVlmBllJ+MimYB8zAewMbGxv637HZMMxvcz+KHm9fBxsbG3pqdD4/yxqBtY9qhfx1IYGNjY2/NzoPefAh13VQkX8zHWFEUgY2Njb01O2kzcl5e2PIGZhYtYGNjY5/DThZaaTPykjYbJEXxBjY2NvbW7NmYPi9LecnJB09tk4ONjY29N7v9ZAvIG4ak+LVxMjY2Nvbe7OTz+diojQdmO8mLJTY2NvY57HaQlB9TezTtCkWQgI2Njb01+2PhyS9EtqtdN0V5E4KNjY19Aru9cNPGBvmYKQ+P20PHxsbGPoe9UoruLWZ5dDGMB7CxsbE3Ys8G8e2wqY2B20j4xR8SGxsb+0h226LksW4yGLr3mLCxsbFPYOfXKJNRfl7AktYiD6GxsbGxT2PPhjvFRZnlazdtOBENlbCxsbE3Yt8VuM4G9+sDrGLP2NjY2FuzV+LbtoVoj68tkMOgFxsbG3sLdtsYtEe2chGnLbRFAcPGxsY+kv3ickwc3NYj/pXxEzY2NjZ23BLMSHlr1B4HNjY29jnslYZhpc1oQ+V8mIWNjY19Dns2rMlLUR4e501OHUVgY2Njb8o+58HGxsbGxsbGxsZ+m+cTvW6v8q9/cMAAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/corntab-corn-定时任务/">corntab,corn,定时任务</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=corn表达式&url=http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=corn表达式&url=http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html&via=Damon Lee" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=corn表达式&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/favicon.png&url=http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2018/07/30/corn表达式/index.html&text=corn表达式" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h5 id="熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下-Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。"><a href="#熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下-Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。" class="headerlink" title="熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下@Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。"></a>熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下@Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。</h5><h5 id="在了解了corn的表达式语法后可以做些什么："><a href="#在了解了corn的表达式语法后可以做些什么：" class="headerlink" title="在了解了corn的表达式语法后可以做些什么："></a>在了解了corn的表达式语法后可以做些什么：</h5><ul>
+<li><strong>Linux，树莓派，软路由通过配置corntab来执行shell用以定时备份数据库，如果你对抓包很熟悉，你就可以通过抓包来实现某些网站的定时自动签到，我最近就有写PT站自动签到的计划。</strong></li>
+<li><strong>在使用Spring的@Scheduled注解，Quartz，或是其他语言的定时任务框架时，就是小Case了。</strong></li>
+</ul>
+<h5 id="我用corn做了什么："><a href="#我用corn做了什么：" class="headerlink" title="我用corn做了什么："></a>我用corn做了什么：</h5><ul>
+<li><strong>最近我负责的后端项目，有一个需求是定时去请求某个接口获取数据，然后再进行统计分析。</strong></li>
+<li><strong>由于我在大学提供的办公室里上班，没有拉宽带的权限，所以只能使用校园网的Portal认证来上网，但是电脑上登录了账号，手机就不能再登录了；前后端联调的时候也无法通过路由器组建局域网，每天上班第一件事都是登录网页认证这个事我自然无法忍受，所以我写了一个shell脚本自动验证，这样只要执行下脚本就实现了一步认证，再也不用手动打开网页输入账号密码了；而且这个shell脚本只要稍稍改下就可以在路由器上使用，上周末的时候我就动手把X讯的K2路由器刷了OpenWRT，然后安装了curl，最后把脚本scp到路由器里，然后通过corntab建了一个定时任务执行脚本，完美的实现了通过路由器来认证校园网。</strong></li>
+</ul>
+<h3 id="corn表达式："><a href="#corn表达式：" class="headerlink" title="corn表达式："></a>corn表达式：</h3><h5 id="结构：从左到右-空格隔开-：秒-分-时-日-月-星期-年份-年份可选"><a href="#结构：从左到右-空格隔开-：秒-分-时-日-月-星期-年份-年份可选" class="headerlink" title="结构：从左到右(空格隔开)：秒 分 时 日 月 星期 年份(年份可选)"></a>结构：从左到右(空格隔开)：秒 分 时 日 月 星期 年份(年份可选)</h5><h5 id="字段含义："><a href="#字段含义：" class="headerlink" title="字段含义："></a>字段含义：</h5><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>允许值</th>
+<th>允许的特殊字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>秒（<em>Seconds</em>）</td>
+<td>0~59</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>分（<em>Minutes</em>）</td>
+<td>0~59</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>小时（<em>Hours</em>）</td>
+<td>0~23</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>日期（<em>DayofMonth</em>）</td>
+<td>1~31</td>
+<td>,- * ? / L W C</td>
+</tr>
+<tr>
+<td>月份（<em>Month</em>）</td>
+<td>1~12或英文月份简写</td>
+<td>, - * /</td>
+</tr>
+<tr>
+<td>星期（<em>DayofWeek</em>）</td>
+<td>1~7或英文星期简写(1代表周日)</td>
+<td>, - * ? / L C #</td>
+</tr>
+<tr>
+<td>年(可选，留空)（<em>Year</em>）</td>
+<td>1970~2099</td>
+<td>, - * /</td>
+</tr>
+</tbody>
+</table>
+<h5 id="常用表达式样例："><a href="#常用表达式样例：" class="headerlink" title="常用表达式样例："></a>常用表达式样例：</h5><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0 0 2 1 * ? *</strong></td>
+<td>表示在每月的1日的凌晨2点</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? * MON-FRI</strong></td>
+<td>表示周一到周五每天上午10:15</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? 6L 2002-2006</strong></td>
+<td>表示2002-2006年的每个月的最后一个星期五上午10:15</td>
+</tr>
+<tr>
+<td><strong>0 0 10,14,16 * * ?</strong></td>
+<td>每天上午10点，下午2点，4点</td>
+</tr>
+<tr>
+<td><strong>0 0/30 9-17 * * ?</strong></td>
+<td>朝九晚五工作时间内每半小时</td>
+</tr>
+<tr>
+<td><strong>0 0 12 ? * WED</strong></td>
+<td>表示每个星期三中午12点</td>
+</tr>
+<tr>
+<td><strong>0 0 12 * * ?</strong></td>
+<td>每天中午12点触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? * *</strong></td>
+<td>每天上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 * * ?</strong></td>
+<td>每天上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 * <em> ? </em></strong></td>
+<td>每天上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 * * ? 2005</strong></td>
+<td>2005年的每天上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 * 14 <em> </em> ?</strong></td>
+<td>在每天下午2点到下午2:59期间的每1分钟触发</td>
+</tr>
+<tr>
+<td><strong>0 0/5 14 * * ?</strong></td>
+<td>在每天下午2点到下午2:55期间的每5分钟触发</td>
+</tr>
+<tr>
+<td><strong>0 0/5 14,18 * * ?</strong></td>
+<td>在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发</td>
+</tr>
+<tr>
+<td><strong>0 0-5 14 * * ?</strong></td>
+<td>在每天下午2点到下午2:05期间的每1分钟触发</td>
+</tr>
+<tr>
+<td><strong>0 10,44 14 ? 3 WED</strong></td>
+<td>每年三月的星期三的下午2:10和2:44触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? * MON-FRI</strong></td>
+<td>周一至周五的上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 15 * ?</strong></td>
+<td>每月15日上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 L * ?</strong></td>
+<td>每月最后一日的上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? * 6L</strong></td>
+<td>每月的最后一个星期五上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? * 6L 2002-2005</strong></td>
+<td>2002年至2005年的每月的最后一个星期五上午10:15触发</td>
+</tr>
+<tr>
+<td><strong>0 15 10 ? * 6#3</strong></td>
+<td>每月的第三个星期五上午10:15触发</td>
+</tr>
+</tbody>
+</table>
+<h5 id="其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。"><a href="#其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。" class="headerlink" title="其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。"></a>其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。</h5>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/07/30/corn表达式/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytI2AR9y';
+var conf = 'prod_108d27991d04e452b37e85cfae7daaeb';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/26/ESXi下安装Lede软路由/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
