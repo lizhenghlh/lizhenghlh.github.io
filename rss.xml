@@ -8,8 +8,28 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Mon, 30 Jul 2018 10:05:46 GMT</pubDate>
+    <pubDate>Tue, 31 Jul 2018 10:58:28 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Spring Boot入门</title>
+      <link>http://lizhenghlh.github.io/2018/07/31/Spring%20Boot%E5%85%A5%E9%97%A8/</link>
+      <guid>http://lizhenghlh.github.io/2018/07/31/Spring%20Boot%E5%85%A5%E9%97%A8/</guid>
+      <pubDate>Tue, 31 Jul 2018 10:45:46 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;我为什么会选择用Spring
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2018/07/31/Spring%20Boot%E5%85%A5%E9%97%A8/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>corn表达式</title>
