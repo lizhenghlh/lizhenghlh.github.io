@@ -8,8 +8,29 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Tue, 31 Jul 2018 10:58:28 GMT</pubDate>
+    <pubDate>Tue, 07 Aug 2018 13:10:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>程序猿的修炼之道</title>
+      <link>http://lizhenghlh.github.io/2018/08/07/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E7%9A%84%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</link>
+      <guid>http://lizhenghlh.github.io/2018/08/07/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E7%9A%84%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</guid>
+      <pubDate>Tue, 07 Aug 2018 11:33:19 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;最近公司的事很忙，再加上家里也有不少事，所以这些日子没有什么产出。最近总想写一些关于程序员的事，所以说写就写。&lt;/p&gt;
+&lt;p&gt;所谓成长，应该就是那句”如果你觉得以前的自己很傻X，那你就成长了”，其实生活不就是让你一次又一次觉得自己以前很傻的过程吗，很多人觉得傻是很可笑的事，
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2018/08/07/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E7%9A%84%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Spring Boot入门</title>
