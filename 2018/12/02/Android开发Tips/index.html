@@ -507,7 +507,9 @@
         <p>我们在开发Android应用的时候经常会遇到一些小问题，为了不让这些小问题浪费你的时间，最好还是记录下，毕竟Time is money.</p>
 <p>下面是我遇到的一些简单的问题，我会持续更新，算是一些Tips：</p>
 <ul>
-<li>当我们用Fragment嵌套Fragment时，同时Fragment又搭配ViewPager显示内容，会出现内层的Fragment的ViewPager不显示UI或者只显示第一页的问题，其实是因为Activity嵌套Fragment使用ViewPager时应该用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```java</span><br><span class="line">MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());//❌错误</span><br><span class="line">MyPagerAdapter adapter = new MyPagerAdapter(getChildFragmentManager());//✔️正确</span><br></pre></td></tr></table></figure></li>
+<li><p>当我们用Fragment嵌套Fragment时，同时Fragment又搭配ViewPager显示内容，会出现内层的Fragment的ViewPager不显示UI或者只显示第一页的问题，其实是因为Activity嵌套Fragment使用ViewPager时应该用<strong>getSupportFragmentManager()</strong>作为PagerAdapter实例化的参数，而当Fragment嵌套Fragment使用ViewPager时应该用<strong>getChildFragmentManager()</strong>。  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyPagerAdapter adapter = <span class="keyword">new</span> MyPagerAdapter(getActivity().getSupportFragmentManager());<span class="comment">//❌错误</span></span><br><span class="line">MyPagerAdapter adapter = <span class="keyword">new</span> MyPagerAdapter(getChildFragmentManager());<span class="comment">//✔️正确</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p>给view的background设置selector不生效，因为selector的匹配规则是从上而下，所以我们应把<strong><em>state_pressed</em></strong>和<strong><em>state_selected</em></strong>等属性为<strong><em>ture</em></strong>的情况放在最前面，如果没有给view设置OnClickListener的话一定要给view设置clickable属性为true</p>
