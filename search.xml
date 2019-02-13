@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>Flutter入坑</title>
+      <link href="/2019/02/13/Flutter%E5%85%A5%E5%9D%91/"/>
+      <url>/2019/02/13/Flutter%E5%85%A5%E5%9D%91/</url>
+      <content type="html"><![CDATA[<p>作为一名有追求的开发人员，关注前沿动态是基本的职业素养之一，Flutter目前趋于稳定，是时候入坑了。</p><p>Flutter的环境搭建的文章网上多的不能在多了，我就不一一赘述了，最好的文档就是官方，<a href="https://flutter.io/docs/get-started/install/macos" target="_blank" rel="noopener">Mac OS环境搭建文档</a>。需要科学上网，不过国内有加速镜像，请自行谷歌百度。</p><p>环境搭建完毕在终端输入<code>flutter doctor</code>后稍等一会儿，如果出现如下界面代表成功了(如果不需要iOS环境，iOS toolchain可以选择不安装，Android Studio和IDEA的Flutter的插件安装你肯定会)</p><p><img src="/img/flutter/1.png" alt="安装成功"></p><p>下面就是挖坑过程，我的Android Studio在安装完Flutter插件后竟然没有创建Flutter项目的选项，虽然可以通过<code>flutter create your_package_name</code>(注意<strong>小写</strong>和<strong>下划线</strong>链接)，但是强迫症受不了啊，最后终于在<a href="https://stackoverflow.com/questions/49405321/new-flutter-project-wizard-not-showing-on-android-studio-3-0-1/52671156" target="_blank" rel="noopener">stackoverflow</a>找到思路，上面的回答无外乎卸载和重新安装Flutter插件以及必须按一定顺序来操作，但是我早就试验过，根本行不通，当看到一个回答说是启用所有AS的插件后重启即可，我马上打开插件列表，选择Disabled的插件，果然看到了<strong>Android APK support</strong>这货，enable这个插件后重启，终于有了创建Flutter项目的选项了。</p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android开发Tips</title>
       <link href="/2018/12/02/Android%E5%BC%80%E5%8F%91Tips/"/>
       <url>/2018/12/02/Android%E5%BC%80%E5%8F%91Tips/</url>

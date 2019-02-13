@@ -8,8 +8,29 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Tue, 04 Dec 2018 02:32:35 GMT</pubDate>
+    <pubDate>Wed, 13 Feb 2019 06:49:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Flutter入坑</title>
+      <link>http://lizhenghlh.github.io/2019/02/13/Flutter%E5%85%A5%E5%9D%91/</link>
+      <guid>http://lizhenghlh.github.io/2019/02/13/Flutter%E5%85%A5%E5%9D%91/</guid>
+      <pubDate>Wed, 13 Feb 2019 10:04:44 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;作为一名有追求的开发人员，关注前沿动态是基本的职业素养之一，Flutter目前趋于稳定，是时候入坑了。&lt;/p&gt;
+&lt;p&gt;Flutter的环境搭建的文章网上多的不能在多了，我就不一一赘述了，最好的文档就是官方，&lt;a
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2019/02/13/Flutter%E5%85%A5%E5%9D%91/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Android开发Tips</title>
