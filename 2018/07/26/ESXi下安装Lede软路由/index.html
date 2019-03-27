@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head>
+    <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -22,7 +22,7 @@
     
     
     
-        <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+        <link rel="dns-prefetch" href="https://changyan.sohu.com">
     
     
     
@@ -68,25 +68,25 @@
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="ESXi下安装Lede软路由 | Damon Lee &#39;s blog">
-    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="一枚程序猿的日常">
     <meta property="og:article:tag" content="ESXi,Lede,软路由,OpenWRT"> 
 
     
-        <meta property="article:published_time" content="7月 26, 2018" />
-        <meta property="article:modified_time" content="7月 25, 2018" />
+        <meta property="article:published_time" content="7月 26, 2018">
+        <meta property="article:modified_time" content="7月 25, 2018">
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="ESXi下安装Lede软路由 | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="http://lizhenghlh.github.io" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://lizhenghlh.github.io">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html" />
+        <link rel="canonical" href="http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -272,7 +272,7 @@
 <!-- Import Font -->
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
         <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
@@ -326,20 +326,19 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><span class="post-toc-number">1.</span> <span class="post-toc-text">上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><span class="post-toc-number">2.</span> <span class="post-toc-text">现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><span class="post-toc-number">3.</span> <span class="post-toc-text">昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><span class="post-toc-number">4.</span> <span class="post-toc-text">先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><span class="post-toc-number">5.</span> <span class="post-toc-text">至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><span class="post-toc-number">6.</span> <span class="post-toc-text">上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"><span class="post-toc-number">7.</span> <span class="post-toc-text">其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">准备工作</span></a>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><span class="post-toc-number">1.</span> <span class="post-toc-text">上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><span class="post-toc-number">2.</span> <span class="post-toc-text">现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><span class="post-toc-number">3.</span> <span class="post-toc-text">昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><span class="post-toc-number">4.</span> <span class="post-toc-text">先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><span class="post-toc-number">5.</span> <span class="post-toc-text">至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><span class="post-toc-number">6.</span> <span class="post-toc-text">上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"><span class="post-toc-number">7.</span> <span class="post-toc-text">其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">准备工作</span></a>
         <!--
         <li class="mdl-menu__item">
             Some Action
         </li>
         -->
-    </ul>
+    </li></ul>
     
 
 
@@ -385,7 +384,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -426,7 +425,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/ESXi-Lede-软路由-OpenWRT/">ESXi,Lede,软路由,OpenWRT</a>
-    </ul>
+    </li></ul>
     
 
     <!-- Share -->
@@ -568,7 +567,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/26/ESXi下安装Lede软路由/"  ></div>
+<div id="SOHUCS" sid="2018/07/26/ESXi下安装Lede软路由/"></div>
 <script type="text/javascript">
 (function(){
 var appid = 'cytI2AR9y';
@@ -699,7 +698,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </ul>
+            </li></ul>
         </li>
         
     
@@ -717,7 +716,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a>
-            </ul>
+            </li></ul>
         </li>
         
     
@@ -758,7 +757,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -978,6 +977,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        </body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
     
 </html>
