@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: 疑难杂症 | 
+            编译构建总结 | 
         
         Damon Lee &#39;s blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Damon Lee">
     <meta name="description" itemprop="description" content="一枚程序猿的日常">
-    <meta name="keywords" content="Java Android Devops Geek Docker">
+    <meta name="keywords" content="Java Android Devops Geek Docker,Makefile,编译,构建">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 疑难杂症 | Damon Lee &#39;s blog">
+    <meta property="og:title" content="编译构建总结 | Damon Lee &#39;s blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="一枚程序猿的日常">
-    
+    <meta property="og:article:tag" content="Makefile,编译,构建"> 
 
+    
+        <meta property="article:published_time" content="4月 06, 2019">
+        <meta property="article:modified_time" content="4月 26, 2019">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: 疑难杂症 | Damon Lee &#39;s blog">
+    <meta name="twitter:title" content="编译构建总结 | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/categories/疑难杂症/index.html">
+        <link rel="canonical" href="http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Damon Lee &#39;s blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Damon Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "Taik is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
+    },
+    "headline": "编译构建总结",
+    "url": "http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html",
+    "datePublished": "4月 06, 2019",
+    "dateModified": "4月 26, 2019",
+    "description": "一枚程序猿的日常",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lizhenghlh.github.io"
+    }
+}
+</script>
 
 
     
@@ -273,103 +306,292 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#概念介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">概念介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#make-说白了就是一个编译命令"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">make (说白了就是一个编译命令)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Makefile-（说白了就是编译的配置文件）"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Makefile （说白了就是编译的配置文件）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#宏-说白了就是编译环境的环境变量"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">宏 (说白了就是编译环境的环境变量)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#编译器介绍"><span class="post-toc-number">3.</span> <span class="post-toc-text">编译器介绍</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/25/http返回200-status却是failed/">http返回200,status却是failed</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天刚到公司，就有前端同学说刚部署的前端代码在访问的时候网页一篇空白，我部署了一版一看，还真是这样，再三确认前端同学在本地构建并访问没有任何问题，紧接着微信就响起来了，其他兄弟公司的项目也都出了问题，我赶紧打开网页查看，果然所有网页都是空白，更神奇的是Chrome报了如下的问题：
-文档状态显示failed，但是http...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/25/http返回200-status却是failed/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/疑难杂症/">疑难杂症</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment">
-                        <span id="sourceId::2018/07/25/http返回200-status却是failed/" class="cy_cmt_count"></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                编译构建总结
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Damon Lee</strong>
+        <span>4月 06, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aQW4CMQwFUO5/6XZbqWr4tkNLkzcrhBgmLyyMv/P4uPJ6YGNjY2NjY2NjY78l+xFfP9315GHBZ3666+u931+X14yNjY19NLu69PUD8qWvv239fnnN2NjY2Bewk8ck4Or2rTG99WBjY2Njz4vNuj2o3jtZMzY2NjZ2XsDyxmPvN2NjY2Nj5y3EnLoeMPTeeXmWho2Njf327EkL8Vevf3W+jY2Njf3G7N5hmjy+ry60V66ilWNjY2Mfys4LQ7IFe4e76+/M14mNjY19NntyKCdvVHptRh5CRT8SNjY29qHsXiOxawDQK4HNDcLGxsY+mt1rFdaFpxotTe7aMN/GxsbGPoI9eZ1vSrLReaMymm9jY2NjH8HOm41mlBMERr3GpjoAxsbGxr6BnWxEdezaK4STxqNcwLCxsbEPZecHeqqFqnclMdaGAoaNjY39b9m9IL56NDMvcvPSFRUwbGxs7CPYrztAky/9FVv2pIBhY2NjH8eujk53MaqxVD7SaJ45xcbGxv637LzNqDYn1dFCr3BGG42NjY19KDuPliYxfbIdUREaNDzY2NjYp7LLf+gHxzTXMVa+Kc04DBsbG/tQ9jwAmnyyyuuVWGxsbOyz2dU//dVAqoqfD5KxsbGxb2NXy0/1IM7k6ORkxIuNjY19D7sa9OeFKo+BejFTHidhY2Nj38OehO/V5qFaxno/BjY2NvZt7F4xKxx/LJLyEUI0KsbGxsa+gL0Ln8Q9k/Ftsn3Y2NjY97B7DcauaCnZ3N6o4EmohI2NjX0Qu1oY8odVj+NMXkdrxsbGxj6aXW0zXjGInURX0UqwsbGxL2AnAU0e/eTBUy88qg6DsbGxsbGr7US0lNZTeoUTGxsbG7taePJx8q5GpRkqYWNjYx/Engx3qyUqeXrvEE+5gGFjY2Mfwa4eapwfu+kd+qyWUmxsbOwb2Pdc2NjY2NjY2NjY2G9zfQJsja/ysnCWqgAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Makefile-编译-构建/">Makefile,编译,构建</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=编译构建总结&url=http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=编译构建总结&url=http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html&via=Damon Lee" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=编译构建总结&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/favicon.png&url=http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2019/04/06/Makefile总结/index.html&text=编译构建总结" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    最近一个月都在忙气象模型相关的应用，例如mm5，WRF，CMAQ等，因为需要在天河超算上运行，普通用户又没有sudo权限，所以就只能自己动手编译了。这些应用都是开源的，切大多采用Fortain语言编写，折腾了一段时间自然要记录一下。</p>
+<h1 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h1><h2 id="make-说白了就是一个编译命令"><a href="#make-说白了就是一个编译命令" class="headerlink" title="make (说白了就是一个编译命令)"></a><a href="https://zh.wikipedia.org/wiki/Make" target="_blank" rel="noopener">make</a> (说白了就是一个编译命令)</h2><p>在<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91" target="_blank" rel="noopener">软件开发</a>中，<strong>make</strong>是一个工具程序（Utility software），经由读取叫做“<a href="https://zh.wikipedia.org/wiki/Makefile" target="_blank" rel="noopener">makefile</a>”的文件，<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E5%8B%95%E5%8C%96%E5%BB%BA%E6%A7%8B" target="_blank" rel="noopener">自动化建构</a>软件。它是一种转化文件形式的工具，转换的目标称为“target”；与此同时，它也检查文件的依赖关系，如果需要的话，它会调用一些外部软件来完成任务。它的依赖关系检查系统非常简单，主要根据依赖文件的修改时间进行判断。大多数情况下，它被用来<a href="https://zh.wikipedia.org/wiki/%E7%BC%96%E8%AF%91" target="_blank" rel="noopener">编译</a><a href="https://zh.wikipedia.org/wiki/%E6%BA%90%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener">源代码</a>，生成<a href="https://zh.wikipedia.org/wiki/%E7%9B%AE%E6%A0%87%E4%BB%A3%E7%A0%81" target="_blank" rel="noopener">结果代码</a>，然后把结果代码连接起来生成<a href="https://zh.wikipedia.org/wiki/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">可执行文件</a>或者<a href="https://zh.wikipedia.org/wiki/%E5%BA%93%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">库文件</a>。它使用叫做“makefile”的文件来确定一个target文件的依赖关系，然后把生成这个target的相关命令传给shell去执行。</p>
+<h2 id="Makefile-（说白了就是编译的配置文件）"><a href="#Makefile-（说白了就是编译的配置文件）" class="headerlink" title="Makefile （说白了就是编译的配置文件）"></a><a href="https://zh.wikipedia.org/wiki/Make#Makefile" target="_blank" rel="noopener">Makefile</a> （说白了就是编译的配置文件）</h2><p>一个工程中的源文件不计其数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为 makefile就像一个<a href="https://baike.baidu.com/item/Shell%E8%84%9A%E6%9C%AC" target="_blank" rel="noopener">Shell脚本</a>一样，其中也可以执行操作系统的<a href="https://baike.baidu.com/item/%E5%91%BD%E4%BB%A4/8135974" target="_blank" rel="noopener">命令</a>。</p>
+<h2 id="宏-说白了就是编译环境的环境变量"><a href="#宏-说白了就是编译环境的环境变量" class="headerlink" title="宏 (说白了就是编译环境的环境变量)"></a><a href="https://zh.wikipedia.org/wiki/Make#%E5%B7%A8%E9%9B%86" target="_blank" rel="noopener">宏</a> (说白了就是编译环境的环境变量)</h2><p>“宏”指的是用一个字符串代替另一个字符串的功能。在makefile中可以使用“=”号来定义宏，使用“$（宏名）”来使用宏；还可以用“+=”追加宏的内容。习惯上，宏名使用大写。例如CC、CXX、FC、FCFLAGS等。</p>
+<p><strong>宏基本上在你做编译和移植主要修改的参数，因为大部分应用都把这里处理的很不错。</strong></p>
+<p>一般我们可以通过环境变量设置，或者在执行<code>./configure</code>命令后跟上相应的配置，例如下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure CC=icc FC=ifort		<span class="comment">#将CC和FC的编译命令指定为icc和ifort</span></span><br></pre></td></tr></table></figure>
+<h1 id="编译器介绍"><a href="#编译器介绍" class="headerlink" title="编译器介绍"></a>编译器介绍</h1><p>网上的教程大多采用GNU的gcc和g++以及gfortran等，也有少部分资料采用intel的编译器，intel的编译器经过我的测试要比GNU系列的编译速度快，并且基本上每年每个季度都会更新，当然也是收费的，不过学生和开源项目的参与者可以免费获取一年的license，具体步骤我就不在这里叙述了，网上有很多资料。</p>
+<p>下表是GNU和INTEL的命令对照，设计到MPI的部分这里不做介绍</p>
+<table>
+<thead>
+<tr>
+<th>GNU</th>
+<th>INTEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gcc</td>
+<td>icc</td>
+</tr>
+<tr>
+<td>g++</td>
+<td>icpc</td>
+</tr>
+<tr>
+<td>gfortran</td>
+<td>ifort</td>
+</tr>
+</tbody>
+</table>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2019/04/06/Makefile总结/"></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytI2AR9y';
+var conf = 'prod_108d27991d04e452b37e85cfae7daaeb';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/02/13/Flutter入坑/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
