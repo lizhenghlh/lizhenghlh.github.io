@@ -8,8 +8,29 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Fri, 26 Apr 2019 02:59:19 GMT</pubDate>
+    <pubDate>Thu, 05 Mar 2020 14:40:16 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>2019年终总结</title>
+      <link>http://lizhenghlh.github.io/2020/03/05/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <guid>http://lizhenghlh.github.io/2020/03/05/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <pubDate>Thu, 05 Mar 2020 12:12:29 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;2020年在快到来的时候就已经注定了不平凡，让肺炎这个词在2003年非典之后再次成了年度热词，一场战役不知掏光了多少家餐饮娱乐业，多个公司降薪裁员也一定让大家意识到了充实自己能力的重要性。&lt;/p&gt;
+&lt;p&gt;我一直认为程序猿本身就是一个要不断学习总结的职业，不然的话做前端就是一
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2020/03/05/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>编译构建总结</title>
