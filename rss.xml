@@ -8,8 +8,30 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Fri, 06 Mar 2020 07:55:50 GMT</pubDate>
+    <pubDate>Tue, 26 May 2020 07:04:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>物理服务器该怎么玩</title>
+      <link>http://lizhenghlh.github.io/2020/05/03/%E7%89%A9%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%A5%E6%80%8E%E4%B9%88%E7%8E%A9/</link>
+      <guid>http://lizhenghlh.github.io/2020/05/03/%E7%89%A9%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%A5%E6%80%8E%E4%B9%88%E7%8E%A9/</guid>
+      <pubDate>Sun, 03 May 2020 07:23:39 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;2019年，get了Kubernetes，get了Flutter，get了新的workflow……&lt;/p&gt;
+&lt;p&gt;然后2020就开始了，和大部分来自于码农的Geek一样，我们是不折腾就不舒服的群体。&lt;/p&gt;
+&lt;p&gt;去年玩的跟硬件搭边的似乎只有基于树莓派4群控大屏和万能遥控器
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2020/05/03/%E7%89%A9%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%A5%E6%80%8E%E4%B9%88%E7%8E%A9/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>2019年终总结</title>
