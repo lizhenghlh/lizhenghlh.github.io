@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            程序猿的修炼之道 | 
+        
+        Damon Lee &#39;s blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+        <link rel="dns-prefetch" href="https://changyan.sohu.com">
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Damon Lee">
+    <meta name="description" itemprop="description" content="一枚程序猿的日常">
+    <meta name="keywords" content="Java Android Devops Geek Docker,程序猿,修养,修炼">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/avatar.jpg">
+    <link rel="icon" sizes="192x192" href="/img/avatar.jpg">
+    <link rel="apple-touch-icon" href="/img/avatar.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Damon Lee &#39;s blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lizhenghlh.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="程序猿的修炼之道 | Damon Lee &#39;s blog">
+    <meta property="og:image" content="/img/avatar.jpg">
+    <meta property="og:description" content="一枚程序猿的日常">
+    <meta property="og:article:tag" content="程序猿,修养,修炼"> 
+
+    
+        <meta property="article:published_time" content="8月 07, 2018">
+        <meta property="article:modified_time" content="8月 20, 2018">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="程序猿的修炼之道 | Damon Lee &#39;s blog">
+    <meta name="twitter:description" content="一枚程序猿的日常">
+    <meta name="twitter:image" content="/img/avatar.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://lizhenghlh.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Damon Lee &#39;s blog",
+        "logo": "/img/avatar.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Damon Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Talk is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
+    },
+    "headline": "程序猿的修炼之道",
+    "url": "http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html",
+    "datePublished": "8月 07, 2018",
+    "dateModified": "8月 20, 2018",
+    "description": "一枚程序猿的日常",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lizhenghlh.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-telegram {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMjMuNCA4MC4yYy0xMC42IDUuNi0zOS4yIDM1LTQzLjYgNDQuOC0zLjYgNy42LTMuOCAyMy42LTMuOCAzNzcuNiAwIDMyNy4yLjQgMzcwLjQgMyAzNzYuOCAzLjYgOC40IDM1IDQwLjQgNDUuMiA0NS44IDYuNiAzLjYgMTkuOCAzLjggMzc3LjggMy44aDM3MWw5LjQtNS42YzEyLjItNyAzNC0yOC44IDQxLTQxbDUuNi05LjRWNTAyYzAtMzU5LjItLjItMzcxLjItMy44LTM3OC01LjItOS44LTM3LjgtNDEuNi00Ni4yLTQ1LjItNi0yLjQtNTguMi0yLjgtMzc3LjQtMi44LTM2Ny40LjItMzcwLjYuMi0zNzguMiA0LjJ6bTY3NSAxNjQuNmMyIDIuMiA0LjIgNy40IDUgMTEuMiAxLjggOS4yLTMuNCA0NC0xMy4yIDkwLTQuNCAyMC40LTkuNCA0OC40LTExLjIgNjIuMi0yLjIgMTguMi01LjIgMzEuOC0xMSA0OC01LjQgMTYtOC40IDI4LjgtOS44IDQzLjItMS40IDEzLjgtNC42IDI3LjgtMTAgNDRzLTguOCAzMS42LTExIDQ4LjZjLTEuNiAxMy44LTYuOCA0Mi0xMS4yIDYyLjYtNC40IDIwLjgtOS40IDQ4LjgtMTEgNjIuNi0zLjIgMjYuOC01LjYgMzMuNi0xNSA0MS42LTEyLjYgMTAuNi0yMC40IDkuNi0zOC40LTQuOC03LTUuNi0xOC40LTE0LTI1LjYtMTktMzAuNC0yMC44LTU0LjQtMzguNC03MC4yLTUxLjQtMTMuMi0xMC44LTM2LjItMjMuNi00Mi40LTIzLjYtOSAwLTI2LjYgMTEuNi01NCAzNS40LTM4IDMzLjItNDcuMiAzNy40LTU5LjQgMjcuNC04LjQtNy4yLTExLjItMTMuMi0xNS44LTM0LjYtMi42LTExLjQtNi44LTIzLTExLTMwLjgtNC42LTgtOC4yLTE4LjQtMTAuMi0yOC40LTEuNi04LjgtNi0yMi40LTkuOC0zMC4yLTMuOC03LjgtNy40LTE3LjQtOC4yLTIxLTIuOC0xNC42LTcuNC0yNS40LTEyLjYtMzAuNC03LjYtNy4yLTMyLjItMTguMi01Mi40LTIzLjQtOS40LTIuNC0yMi40LTcuNC0yOC44LTExLjItNi40LTMuOC0xNi44LTguMi0yMy05LjYtMTQuMi0zLjQtMjIuOC03LjYtMjcuOC0xNC4yLTEwLjYtMTMuNi02LjQtMjcgMTAtMzIgNS42LTEuNiAxNC40LTUuNiAxOS40LTguOCA1LTMuMiAxNS44LTcuOCAyNC05LjggOC0yLjIgMTctNS44IDIwLTggOS02LjYgMTctMTAgMzMuNi0xNC4yIDguOC0yLjIgMjIuNC02LjggMzAtMTAuMiA3LjgtMy4yIDIxLjItNy44IDI5LjgtMTAuMiA4LjgtMi4yIDIxLjYtNy42IDI4LjgtMTEuOCA3LjItNC4yIDE4LTguNiAyNC0xMCA2LTEuNCAxNi01LjYgMjItOS4yIDYtMy42IDE4LjYtOC44IDI4LTExLjQgOS40LTIuOCAyNC4yLTcuOCAzMy0xMS40IDguOC0zLjYgMjIuOC04LjIgMzEtMTAuMiA4LjItMi4yIDIwLTcgMjYtMTAuNiA2LTMuOCAxNi44LTguNCAyNC0xMC4yIDcuMi0yIDE4LTYuNiAyNC0xMC4yIDYtMy44IDE5LTkgMjguOC0xMS44IDkuOC0yLjggMjQtNy44IDMxLjgtMTEgNy42LTMuNCAyMS4yLTggMzAuMi0xMC4yIDktMi4yIDIxLjItNy4yIDI3LjQtMTEgNi4yLTQgMTcuNi04LjggMjUtMTAuOCA3LjYtMiAxNi42LTQuNiAxOS44LTUuNiA3LjYtMi42IDEzLTEuMiAxNy40IDQuNHoiLz48cGF0aCBkPSJNNjQ1LjYgMzYwLjhjLTIzLjQgMTIuNi0zMyAxOC4yLTM3LjYgMjIuNC0yLjggMi42LTExIDgtMTguNCAxMi4yLTMzLjYgMTkuMi02My40IDM3LjgtODMuNiA1Mi4yLTYgNC40LTE2IDEwLjQtMjIgMTMuNHMtMTMuNiA3LjYtMTcgMTBjLTMuMiAyLjYtMTEuMiA3LTE3LjYgMTAtNi4yIDMtMTQgNy40LTE3IDEwLTMgMi42LTExIDcuOC0xNy42IDExLjgtMTEuNCA2LjYtMjMgMTguNC0yOC40IDI4LjYtMy42IDYuNi0yLjggMTkuMiAxLjYgMzAuNiAyLjIgNS42IDYuOCAyMyAxMCAzOC42IDYuOCAzMS44IDkuNiAzOCAxNy40IDM3IDgtMSAxMi4yLTguNiAxOC40LTM0LjIgMy42LTE0LjggNy44LTI2LjQgMTEtMzEuMiA3LjYtMTAuOCA3Ny03Ny40IDExOC4yLTExMy4yIDEwLTguNiAyNy42LTI0LjYgMzkuNC0zNS42IDExLjgtMTEgMjQuNi0yMiAyOC40LTI0LjZDNjM5LjQgMzkzIDY2MCAzNjcgNjYwIDM2MmMwLTUuOC01LTYuMi0xNC40LTEuMnoiLz48L3N2Zz4=);
+    }
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                程序猿的修炼之道
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Damon Lee</strong>
+        <span>8月 07, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzklEQVR42u3aS3IjIRAFQN3/0p4LzLTeK/CEBMlKIXcDiRa4Pq+fK8cLGxsbGxsbGxsb+yPZr3gkb/1lsX98//xkMme9Z2xsbOyj2fmGnpdPvp99Xt8zNjY29g3sfLv5hp4ZOSDZz5u1sLGxsbEf2c+A9jJLAiFsbGxs7BV2Hja0M+RUbGxsbOxZgiZaIP5m12y/nkvDxsbG/nh2XjT9nM//tb6NjY2N/cHsduxqpmnHz/LAxsbGPpWdXwy7DqgtBreHi42NjX0be7bdaJk4FbWSWiraibCxsbEPZT8nj2Ybyrc1S/3nFxs2Njb2Peznf/FnV11S3E3WKgoAuzqVsLGxsb+KvZKsWW+RbI87uWjrQi82Njb2Eey8Wad9pi0StymkJKWFjY2NfQ87vyS2bSU+gjwIKQq92NjY2IeyZ9taab7JQ47kmsTGxsa+jZ0HGwlpVk5YSWwVq2NjY2Mfym6DhJWCbr7pWUHizbvY2NjYh7KHRdNRYaBNNs0Oa1vzJTY2NvYXsldSNitpozYVNZsHGxsb+1R2e5m1y+ezrZSWh4VebGxs7CPYeam1TQCtJIza5FE0PzY2NvbR7Pw6mSXrVza9q3EHGxsb+1T2SsAwC0Jms60092NjY2Pfw54VCdqi78paSz8ANjY29qHsWUng9666vFTcprewsbGx72HPkvV5OJHPnz9ThyLY2NjYh7LbomzeZD+7LJPCQFKWxsbGxr6H3bZOtkHCrEEzGdsiMGxsbOwvZLejbnlcaOtp/4qNjY19J7u9JPK3Zsmp5PiGJQ1sbGzso9mzS6tNJOVF3DzMKJ7ExsbGvoC9cgnljT7tsc4STNjY2NjYbfJoV7GhLSEXPw82NjY2dtmO0wY86+PNkWFjY2NfwM5TP7vCj7ylMn++vsCwsbGxj2CvNDiuhxCzpH8dxmBjY2Mfyr5nYGNjY2NjY2NjY3/M+AP6Vl5goCDuSQAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/程序猿-修养-修炼/">程序猿,修养,修炼</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=程序猿的修炼之道&url=http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=程序猿的修炼之道&url=http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html&via=Damon Lee" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=程序猿的修炼之道&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/avatar.jpg&url=http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2018/08/07/程序猿的修炼之道/index.html&text=程序猿的修炼之道" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>最近公司的事很忙，再加上家里也有不少事，所以这些日子没有什么产出。最近总想写一些关于程序员的事，所以说写就写。</p>
+<p>所谓成长，应该就是那句”如果你觉得以前的自己很傻X，那你就成长了”，其实生活不就是让你一次又一次觉得自己以前很傻的过程吗，很多人觉得傻是很可笑的事，但是你敢说成长是很可笑的事吗？</p>
+<p>曾经我也是一名北漂，记得刚到北京的时候，我跟同学租着一个月几百的群租公寓，上班路程要两个小时的公交和地铁，公交的拥挤程度让你真正见识到什么是真正的”北京欢迎你”，图的就是省点房租，但是一周过去后我就发现自己的想法很可笑，虽然两个小时的公交我起码可以看一小时的技术文章，但是如果我找一个离公司近的房子，我就可以省出一个小时的时间来进行高效的学习，这时我不免开始嘲笑一周前因为省了一点房租而沾沾自喜的我。第二周我就开始找离公司近的新房子，然后为了退押金走在没有路灯伸手不见五指的街上，那天晚上我就发誓：”我以后绝对不会再回这了！”</p>
+<p>渐渐的我适应了北京的环境，每天在地铁上读技术文章丰富自己的技术认知，当然还有更幸运的是我遇到了一个好的技术老大，一个好的师傅以及一票好同事，我深刻的知道那段日子我最苦，但是也是我进步最快和最开心的日子，我们每周有技术分享，有CodeReview，有需求做不完同事间的互帮互助。</p>
+<p>后来我离开了北京。回到家后感触最深的就是工作机会跟北京比少太多了，毕竟三四线城市的互联网环境跟北上广比就是天壤之别，大部分公司都是做外包或者接一些ZF工程。但不是在小公司你就不能没有一番作为，回家的这段时间，我一直利用自己业余的时间丰富自己的职业技能和非职业技能，坚持一年下来，你同样会发现自己有很大的进步，所以与其抱怨家里的就业环境，不如丰富自己技能，毕竟是石头永远不会发光(但是金子一定会发光)。</p>
+<p>关于程序员，很多人说是青春饭，这一点我也是深信不疑的，毕竟年轻人比你学东西快，比你身体好，比你能加班，当然最重要的一点他们要的工资比你低，即便你开公司你也会选择这样的人，但这并不是你止步不前的理由，如果同样的工作年限，你的能力比同事强，说明你的学习能力强，正常情况下老板肯定会优先考虑你来转管理的，转型管理是避开青春饭的最佳出路。不过我我问过身边的同事，如果一个技术不如你的人当你的领导你会怎样，大多数人的回答都是肯定不服，当然也有人回答既然人家当上领导就算技术不强肯定也是管理能力特别强，不过紧接着他又说：”这样的人少之又少，毕竟技术不精通却还要管理技术人员确实很难服众”。所以如果你想转管理的话，趁现在好好磨练你的技术吧。</p>
+<p>关于技术的磨练，我觉得最主要的就是效率，效率不仅仅是做得快，还要保证质量，我确实见到过一些人很快的完成需求，然后花费大量时间去改bug，这些人往往还能得到团队和领导的认可，就是因为他们做得快，让大家忽略了质量的问题，而往往就是因为代码的质量无法保证，导致后面入职的新同事天天对离职的老同事问候爹娘😂，后来的人给前面的人”擦屁股”，然后往复循环，这样的结果就是技术债越积越多，当然很多外包项目负责人经常说：”没事，我们这就是一锤子买卖，交付的时候合格了就行，后面的事就不管了”。但是我想说的是这样往往受伤的不光是做项目的人，还有公司，写项目的人做东西没质量得不到提高，接项目的公司因为项目后期出现问题无法给客户完美解决而失去了客户。当然还有与之相反的一类人，干活儿慢到不行，分配任务的时候总说自己负责的东西又麻烦又难，本来正常一天的工作任务，今天没做完，明天又没做完，抱着反正老板和经理不懂技术的心里或者沉浸在认为自己负责的是”最难”的模块晚一两天很正常，全然一副小白兔的既视感。</p>
+<p>当你做到写出的代码又快质量又好的时候，你就应该满足了吗，当然不是，做完了项目，我们要分发，要部署，这些事同样浪费时间，而且是重复的工作，重复的工作一定要脚本化，CI/CD是很成熟的解决办法，配合上SonarQube静态代码审查，我相信你的水平肯定会更上一层楼的。</p>
+<p>我有个学弟曾问过我：”师兄，我觉得搞技术太枯燥了，我爸妈当时就是觉得这一行工资高，非让我报这个”。我相信这样的人不在少数，因为我是从小就对编程有兴趣，所以我在这上面投入了大量的时间，因为每次做完东西的成就感让我感觉特别舒服，除了工作的项目，业余时间利用技术我也做了很多事，幸运的是有那么一票技术特别棒的面试官就喜欢把技术用在生活上的人，毕竟技术源于生活，一个人如果业余的事都做得很精致，工作上的事还会有什么问题吗，如果你是这样的人，你在面试的时候会大大加分的。所以如果你觉得技术枯燥，不妨试试把你学的东西用在生活上，比如用树莓派做个魔镜，手动编译个路由器固件给家里的网络去个广告，或者买一些智能家居组件组一个物联网中心。</p>
+<p>我印象比较深刻的就是我在北京遇到我老大的时候，他就是因为我知道的东西多(虽然都不精通)而对我印象不错的。我本身是个Android开发，业余时间我学习了Linux，编译过AOSP源码，编译过FFMpeg，编译过路由器固件，学习了Shell，搭建了持续集成，学习了Docker，还用自己的服务器玩了虚拟化，组过HomeLab，玩树莓派，然后面试的时候我跟面试官说起这些的时候给我加了很多印象分，当然如果凑巧这个公司可能正好用了你业余时间学过和用过的技术，不要你要谁？同样的经验同样的水平，不要你要谁？</p>
+<p>认识我的人可能都知道我的目标就是全栈。我知道很多人不认可全栈，认为全栈就是全菜，说全栈工程师是哪个都会但是哪个都不深，但我觉得这并不是问题，因为在我的认知里是当你在某个方向很熟练的情况下你就应该往广度发展了，当你会做前端时，你做后端就会知道接口怎么设计才是对前端友好；当你懂devops的时候，你就知道怎么设计配置文件能让项目方便部署和迁移；当你用过多个数据库的时候(肯定不仅仅是CRUD)，你就知道什么时候该用哪个和有什么好处以及有什么坑。只有当你在各个方面都有涉猎的时候，你才能做到最合适的架构就在我心中，因为我心中有架构。如果这时候老板慧眼识珠要选一个人总览全局，不找你找谁？如果没找你的话，不妨打开招聘软件，搜一下”技术总监”、”技术经理”、”架构师”、”CTO”等关键字，相信薪资和需求会满足你的预期。</p>
+<p>最重要的就是你知道自己想要什么，明确了就为之而努力，这样才不会后悔，然后干掉这碗毒鸡汤。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/08/07/程序猿的修炼之道/"></div>
+<script type="text/javascript">
+(function(){
+var appid = '';
+var conf = '';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/08/09/路由器认证校园网的一个思路/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/31/Spring Boot入门/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Damon Lee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        leezheng0815@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:leezheng0815@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/lizhenghlh" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/DamonLee0815" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Damon Lee 's blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+    
+</html>

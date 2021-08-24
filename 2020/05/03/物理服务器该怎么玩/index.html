@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            物理服务器该怎么玩 | 
+        
+        Damon Lee &#39;s blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+        <link rel="dns-prefetch" href="https://changyan.sohu.com">
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Damon Lee">
+    <meta name="description" itemprop="description" content="一枚程序猿的日常">
+    <meta name="keywords" content="Java Android Devops Geek Docker,程序猿,服务器,all in one">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/avatar.jpg">
+    <link rel="icon" sizes="192x192" href="/img/avatar.jpg">
+    <link rel="apple-touch-icon" href="/img/avatar.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Damon Lee &#39;s blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lizhenghlh.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="物理服务器该怎么玩 | Damon Lee &#39;s blog">
+    <meta property="og:image" content="/img/avatar.jpg">
+    <meta property="og:description" content="一枚程序猿的日常">
+    <meta property="og:article:tag" content="程序猿,服务器,all in one"> 
+
+    
+        <meta property="article:published_time" content="5月 03, 2020">
+        <meta property="article:modified_time" content="5月 26, 2020">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="物理服务器该怎么玩 | Damon Lee &#39;s blog">
+    <meta name="twitter:description" content="一枚程序猿的日常">
+    <meta name="twitter:image" content="/img/avatar.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://lizhenghlh.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Damon Lee &#39;s blog",
+        "logo": "/img/avatar.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Damon Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Talk is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
+    },
+    "headline": "物理服务器该怎么玩",
+    "url": "http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html",
+    "datePublished": "5月 03, 2020",
+    "dateModified": "5月 26, 2020",
+    "description": "一枚程序猿的日常",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lizhenghlh.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-telegram {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMjMuNCA4MC4yYy0xMC42IDUuNi0zOS4yIDM1LTQzLjYgNDQuOC0zLjYgNy42LTMuOCAyMy42LTMuOCAzNzcuNiAwIDMyNy4yLjQgMzcwLjQgMyAzNzYuOCAzLjYgOC40IDM1IDQwLjQgNDUuMiA0NS44IDYuNiAzLjYgMTkuOCAzLjggMzc3LjggMy44aDM3MWw5LjQtNS42YzEyLjItNyAzNC0yOC44IDQxLTQxbDUuNi05LjRWNTAyYzAtMzU5LjItLjItMzcxLjItMy44LTM3OC01LjItOS44LTM3LjgtNDEuNi00Ni4yLTQ1LjItNi0yLjQtNTguMi0yLjgtMzc3LjQtMi44LTM2Ny40LjItMzcwLjYuMi0zNzguMiA0LjJ6bTY3NSAxNjQuNmMyIDIuMiA0LjIgNy40IDUgMTEuMiAxLjggOS4yLTMuNCA0NC0xMy4yIDkwLTQuNCAyMC40LTkuNCA0OC40LTExLjIgNjIuMi0yLjIgMTguMi01LjIgMzEuOC0xMSA0OC01LjQgMTYtOC40IDI4LjgtOS44IDQzLjItMS40IDEzLjgtNC42IDI3LjgtMTAgNDRzLTguOCAzMS42LTExIDQ4LjZjLTEuNiAxMy44LTYuOCA0Mi0xMS4yIDYyLjYtNC40IDIwLjgtOS40IDQ4LjgtMTEgNjIuNi0zLjIgMjYuOC01LjYgMzMuNi0xNSA0MS42LTEyLjYgMTAuNi0yMC40IDkuNi0zOC40LTQuOC03LTUuNi0xOC40LTE0LTI1LjYtMTktMzAuNC0yMC44LTU0LjQtMzguNC03MC4yLTUxLjQtMTMuMi0xMC44LTM2LjItMjMuNi00Mi40LTIzLjYtOSAwLTI2LjYgMTEuNi01NCAzNS40LTM4IDMzLjItNDcuMiAzNy40LTU5LjQgMjcuNC04LjQtNy4yLTExLjItMTMuMi0xNS44LTM0LjYtMi42LTExLjQtNi44LTIzLTExLTMwLjgtNC42LTgtOC4yLTE4LjQtMTAuMi0yOC40LTEuNi04LjgtNi0yMi40LTkuOC0zMC4yLTMuOC03LjgtNy40LTE3LjQtOC4yLTIxLTIuOC0xNC42LTcuNC0yNS40LTEyLjYtMzAuNC03LjYtNy4yLTMyLjItMTguMi01Mi40LTIzLjQtOS40LTIuNC0yMi40LTcuNC0yOC44LTExLjItNi40LTMuOC0xNi44LTguMi0yMy05LjYtMTQuMi0zLjQtMjIuOC03LjYtMjcuOC0xNC4yLTEwLjYtMTMuNi02LjQtMjcgMTAtMzIgNS42LTEuNiAxNC40LTUuNiAxOS40LTguOCA1LTMuMiAxNS44LTcuOCAyNC05LjggOC0yLjIgMTctNS44IDIwLTggOS02LjYgMTctMTAgMzMuNi0xNC4yIDguOC0yLjIgMjIuNC02LjggMzAtMTAuMiA3LjgtMy4yIDIxLjItNy44IDI5LjgtMTAuMiA4LjgtMi4yIDIxLjYtNy42IDI4LjgtMTEuOCA3LjItNC4yIDE4LTguNiAyNC0xMCA2LTEuNCAxNi01LjYgMjItOS4yIDYtMy42IDE4LjYtOC44IDI4LTExLjQgOS40LTIuOCAyNC4yLTcuOCAzMy0xMS40IDguOC0zLjYgMjIuOC04LjIgMzEtMTAuMiA4LjItMi4yIDIwLTcgMjYtMTAuNiA2LTMuOCAxNi44LTguNCAyNC0xMC4yIDcuMi0yIDE4LTYuNiAyNC0xMC4yIDYtMy44IDE5LTkgMjguOC0xMS44IDkuOC0yLjggMjQtNy44IDMxLjgtMTEgNy42LTMuNCAyMS4yLTggMzAuMi0xMC4yIDktMi4yIDIxLjItNy4yIDI3LjQtMTEgNi4yLTQgMTcuNi04LjggMjUtMTAuOCA3LjYtMiAxNi42LTQuNiAxOS44LTUuNiA3LjYtMi42IDEzLTEuMiAxNy40IDQuNHoiLz48cGF0aCBkPSJNNjQ1LjYgMzYwLjhjLTIzLjQgMTIuNi0zMyAxOC4yLTM3LjYgMjIuNC0yLjggMi42LTExIDgtMTguNCAxMi4yLTMzLjYgMTkuMi02My40IDM3LjgtODMuNiA1Mi4yLTYgNC40LTE2IDEwLjQtMjIgMTMuNHMtMTMuNiA3LjYtMTcgMTBjLTMuMiAyLjYtMTEuMiA3LTE3LjYgMTAtNi4yIDMtMTQgNy40LTE3IDEwLTMgMi42LTExIDcuOC0xNy42IDExLjgtMTEuNCA2LjYtMjMgMTguNC0yOC40IDI4LjYtMy42IDYuNi0yLjggMTkuMiAxLjYgMzAuNiAyLjIgNS42IDYuOCAyMyAxMCAzOC42IDYuOCAzMS44IDkuNiAzOCAxNy40IDM3IDgtMSAxMi4yLTguNiAxOC40LTM0LjIgMy42LTE0LjggNy44LTI2LjQgMTEtMzEuMiA3LjYtMTAuOCA3Ny03Ny40IDExOC4yLTExMy4yIDEwLTguNiAyNy42LTI0LjYgMzkuNC0zNS42IDExLjgtMTEgMjQuNi0yMiAyOC40LTI0LjZDNjM5LjQgMzkzIDY2MCAzNjcgNjYwIDM2MmMwLTUuOC01LTYuMi0xNC40LTEuMnoiLz48L3N2Zz4=);
+    }
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                物理服务器该怎么玩
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Damon Lee</strong>
+        <span>5月 03, 2020</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4klEQVR42u3aUXLiUAwEQO5/6c0BtjAjyaQcvfZXigB+7Y8o0uj178jrhY2NjY2NjY2Njf1I9iu+/v9U75XkO9/9PDozNjY29mr2hz/9lzd+d9DkPddnqL7+4czY2NjYB7Dz474rEvlRru+SfDY/MzY2NjZ2ctzqw0p+mzct2NjY2Ni9FmLSqLwrUUn7gY2NjY09GdBcl58EcP2e3itfn6VhY2NjP56dNwPP+flX821sbGzsB7Or1yQqeBWvvFxFJ8fGxsZeys4LQ/5QqmOjKrJ3TmxsbOzd7DxenTyC/Pt7IcSH+AEbGxt7KXsS2U7G9/N35itB2NjY2Cew7ypOeWtRWLWJW47Cyg42Njb2OnZ+y2p5qw6bkgfaG4RhY2Njb2VPCkneVNxQfooBMDY2NvbJ7OqaYwIoH7G6WJnEw9jY2Nir2dV/+vORfTOULT6IZgHDxsbGXsGuDmt6DUzeeJRXKuNYAhsbG3s3Oxnl52uUzZWa+DubDxobGxv7APbkKL2GIf9UNST+Yr6NjY2N/TB2tRjk5Sca2bdajmZQjY2Njb2afdfwaDIqyuOEfHEHGxsb+wR2UsaqyzGTYKDaJhUeGTY2NvZSdm8on193lb1JG4ONjY29m523HL2RU154ekOrQpCAjY2NvZTdC1B7Ba96r16xLAe92NjY2OvY+fh+HglPxlvlsRQ2Njb2AezqESfBQNLA5IFBMx7AxsbGXsruRbn5WKqw+F5c3Bmt0WNjY2OvY1cDgxzQi2+/GA9gY2Nj/3H2ZASfkKolrVpW81ABGxsbeyu7F+hWy0l1nNQbIX24FzY2NvZqdi9MzT9719hoEi1gY2Njn8DujfiTxZ3J2s2reDVXdrCxsbGPZCdFqDqQ6pWr6PFhY2NjY8etSLPAFBeGqt+DjY2NfQI7aRXydqL3zb01oFEBw8bGxl7Bnqw2Jq1IHh7npHI4jY2Njb2Ufc6FjY2NjY2NjY2N/ZjrB8BcIIKrEoqzAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/程序猿-服务器-all-in-one/">程序猿,服务器,all in one</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=物理服务器该怎么玩&url=http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=物理服务器该怎么玩&url=http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html&via=Damon Lee" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=物理服务器该怎么玩&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/avatar.jpg&url=http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2020/05/03/物理服务器该怎么玩/index.html&text=物理服务器该怎么玩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>2019年，get了Kubernetes，get了Flutter，get了新的workflow……</p>
+<p>然后2020就开始了，和大部分来自于码农的Geek一样，我们是不折腾就不舒服的群体。</p>
+<p>去年玩的跟硬件搭边的似乎只有基于树莓派4群控大屏和万能遥控器的合体项目，我清楚的记得疫情期间程序猿圈子里各种淘换设备来玩，我自然也是动了心思。思索了许久，感觉家里的HP MicroServer Gen8似乎已经稳定服务2年了，堪称理财产品的它似乎只有最高16G内存这个缺点了。开始本来想来一套华南双路x79来玩玩的，但是转念一想我为何不直接淘个洋垃圾服务器呢，反正都是7x24h运行，服务器怎么都比寨板稳定，又碰上正好有一个大佬在安利HP DL380P G8，其实也是Gen8，不过我现在家里的是微服务器，而这个DL380P是2U的机架式。关于声音的问题可以通过扔阳台来解决。</p>
+<p>说干就干，定好了两颗e5 2630l，32G内存(本来想64的，但是REG ECC跟着普通内存一起瞎起哄涨价，只能先买32，后续降价了再买32G)，这样基本就满足了我开虚拟机的需求了，下单后第二天到货，疫情期间快递统一小区东门，距离我家走路七八分钟，本来寻思放电动车踏板就能带回家，结果根本放不下，只能让我妈扶着箱子，我推着车带回了家。</p>
+<p>然后就开始了折腾之路，跟家里之前的gen8一样，系统装在TF卡(其实gen8是sd卡)，在把ODD SATA转成普通SATA接一个2.5寸的硬盘用3M胶粘在电源壳的铁皮上😂，前面板硬盘笼的12个盘位全部放3.5普通硬盘，当然我并没有那么多硬盘😢。硬件基本就这样；接下来是软件，因为之前的Gen8用的是ESXi，所以这次想玩玩Proxmox VE(后面简称PVE)，因为现在东西还没到齐，所以先找个内存卡装个ESXi尝尝鲜。</p>
+<p>先是老路子去惠普官网下载专用的ESXi的iso，最新的是6.7 U3，安装的时候直接卡死，我以为机器有问题，然后马上换6.7 U2，可以成功，不禁想难道是BIOS版本太旧了，咨询大佬后建议我先装个win server然后升级下服务器的各个固件，至于为啥需要用win升级固件，因为惠普官网都是酱婶的，只有极个别的固件版本支持Linux安装。一顿操作猛如虎的升级固件后，继续安装U3，同一个位置，同样的卡死😂，此时内心已崩溃，睡觉，翌日再战。</p>
+<p>第二天新的32G的TF卡到了后，开始折腾PVE，官网下载镜像，写入优盘(写入优盘后跟其他系统不一样，win下会让你格式化，不用理，直接安全退出优盘拔出即可)，安装步骤就不赘述了，实在是太简单了，安装完成一次点亮，进入web管理页面开始安装OMV，为啥安装OMV，因为打算12个硬盘位全部直通给OMV，然后通过OMV创建各种文件系统给其他系统使用，想法总是美好的，但是现实总会给你一记重击，重击是什么呢，就是按照PVE官网设置阵列卡直通死活不成功，既然阵列卡不行我就试试网口直通吧，同样的命令，同样的错误，谷歌英文搜索后有国外大佬说是HP的新固件做了限制，要想直通请降回历史版本的固件，但是这个历史版本到底是哪个版本，大佬没写😂，难不成我要每次都装回win，然后换固件，再装PVE，再直通……内心再度崩溃，睡觉，翌日再战。</p>
+<p>翌日，就在查资料和折腾的过程中，PVE报了个eof error，猜测是存储配置在SD 卡造成的问题，最终得出结论，PVE不适合安装在TF卡，看来还得换回ESXi，在装完6.7 U2后，突然想到由于我的硬盘有4T有12T有1T更有500G的，这种复杂的搭配不适合组raid，所以需要转换为HBA Mode再直通，在上网找了p420i如何强开HBA Mode后就去尝试直通p420i给OMV，此时，只听到服务器的风扇瞬间飙到满速，几秒钟后自动重启了，再次尝试后问题依旧，谷歌查不到答案，用英文搜索同样查不到，但是却查到了p420i直通后CPU占用100%的问题，CPU占用100%意味着啥，那就是风扇要满速运行，新的固件很可能会自动重启，此路不通，内心再度崩溃，再决定买真正的HBA卡后，睡觉，来日再战。</p>
+<p>为了赶紧折腾，特意找了个北京的深水宝店家，报价比其他几家贵50块，很多外地商家还无货，没办法只能加钱了，第二天就到货了，拆开服务器，把p420i的供电拆下来后在PCI槽上插上了新到的HBA卡，开机直通，一切顺利，完美，此时眼泪已在眼睛里打转，内心一直回放着：“我太难了！”。紧接着尝试网口直通，同样完美。此时不知道为啥我非要去惠普官网看看，还偏偏无意间看到了官网更新了ESXi 7.0的镜像，我的天，我刚搞定完直通，你就更新了新的系统镜像，手没忍住点了下载，然后写入优盘，重装系统……这次我就鸡贼了，我换了一张TF卡，如果7.0不好用，我换回之前的6.7的卡就好了，结果7.0装完OMV直通后的磁盘速度还真是比6.7要快，机智的我再一次被自己的机智打败了，因为7.0装在了性能比较差的SD转TF卡，而6.7装在了性能更好的TF卡上，既然7.0使用体验还不错，那就把7.0装在TF上吧，于是拆机，换卡，重启，装系统……此时想要实现的东西都已测试完毕，睡觉，等明天规划好功能在动手。</p>
+<p>功能规划和功能实现同样重要的，所以换了一套跟gen8不一样的方案，网络规划是光猫连接iKuai，iKuai直通一个网口作为wan口，二级路由依旧openwrt，用来全局去广告和国外查资料，剩余两个网口直通给openwrt，其中一个连接交换机，然后用爆款小音箱TP link 7650组mesh实现5G WiFi全覆盖(别问我为啥不一步到位上WiFi6的AP，因为没钱啊😂，而且手里也没有WiFi6的设备，而且说实话1300M的无线速率其实已经妥妥够了，等后面万兆交换机和WiFi6普及后再换不晚)，最后剩余的一个物理网口用来做ESXi的管理口；功能规划是所有硬盘位直通给OMV，然后OMV通过nfs和Samba共享给NAS和WIN10，其中NAS主要用来PT和电视投影用来观影，WIN10主要用来通过远程桌面来使用百度网盘和迅雷(基本上等同于废物一个了)，然后再来一个Ubuntu和Centos用来编译项目和玩耍，其实凑够64G内存后用来组Ceph和k8s一起玩耍也是不错的选择，不过k8s还是留给工作中用吧，生活里需求确实不大。</p>
+<p>至于为啥选择OMV，因为之前gen8的硬盘走的是RDM，这种方式虽然可以发挥出硬盘的99%的性能，但是会造成硬盘无法休眠，无法获取硬盘的SMART信息，而真正的直通就可以避免这个问题，至于为啥不直接把硬盘直通给NAS，是因为NAS提供出去的NFS和Samba服务会造成磁盘速度无法跑满，这一点我在矿渣蜗牛星际中也得到了验证。而且OMV支持直接查看硬盘的SMART信息，可以开启休眠，还可以通过插件获得ZFS，好像也可以选择固定的硬盘来组软raid。可能有人说OMV其实就是NAS系统了，为啥还要再弄个NAS系统了，其实主要就是为了手机app可以备份和查看资源，而且服务器确实资源过剩😃，多开一个系统完全无所谓。</p>
+<p>以上就是2020开年的All in one的新方案，总结起来就是：洋垃圾虽然便宜，但是没有一定的折腾能力还是谨慎购买，当然折腾完之后就什么都不用管了也是巴适得很。如果父母在家用网的话，最好做个灾备措施，万一服务器出了问题宕机了家里的网络自然会瘫痪，所以我把家里的网件路由器设置成和AP同SSID，一旦服务器宕机断网，父母只要把网件路由器的电源插上，然后光猫的网线接到路由器的wan口即可临时恢复网络。</p>
+<p>截止到本文结束，服务器已经丢在阳台稳定运行一个多月，除了吸尘，噪音还能接受，等手头富裕了买个机柜，体验还能提升一个档次。</p>
+<p>PS：HP GEN10 Plus已经上线，体积更小，性能更高，同时解决了gen8诟病的风扇声，最高64G内存，家用完全足够，如果资金允许，墙裂推荐购买。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2020/05/03/物理服务器该怎么玩/"></div>
+<script type="text/javascript">
+(function(){
+var appid = '';
+var conf = '';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2021/02/24/2020年终总结/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2020/03/06/2019年终总结/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Damon Lee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        leezheng0815@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:leezheng0815@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/lizhenghlh" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/DamonLee0815" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Damon Lee 's blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+    
+</html>
