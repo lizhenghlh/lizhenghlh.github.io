@@ -526,7 +526,7 @@
 </li>
 <li><p>得到下面的内容，就可以搜寻你认为可疑的内容了，然后你要做的就是动态改变需要的参数就可以。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http://x.x.x.x/Login?para=abcdefghijklmnopqrstuvwxyz==&amp;_=1533804052510'</span> -H <span class="string">'Pragma: no-cache'</span> -H <span class="string">'Accept-Encoding: gzip, deflate'</span> -H <span class="string">'Accept-Language: zh-CN,zh;q=0.9,und;q=0.8,en;q=0.7,zh-TW;q=0.6'</span> -H <span class="string">'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36'</span> -H <span class="string">'Accept: */*'</span> -H <span class="string">'Referer: http://10.0.0.253/Index.jsp?hwid=00:00:00:00:00:00&amp;devip=10.0.0.252&amp;devport=0&amp;vlan=0'</span> -H <span class="string">'Cookie: JSESSIONID=57516FB172738FCEA999C2526AED0F5D'</span> -H <span class="string">'Connection: keep-alive'</span> -H <span class="string">'Cache-Control: no-cache'</span> --compressed</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/08/09/路由器认证校园网的一个思路/portal/5.png" alt=""></p>
+<p><img src="/images/portal/5.png" alt=""></p>
 <p>比如para后面的文本(我已经替换成了abcd…xyz)，很明显这个就是你账号密码生成的参数，紧接着的自然就是毫秒时间戳了(眼尖的你一定看出来了)，再有一个就是Cookie中的JSESSIONID了，para可以记录下，时间戳可以自己生成，但是JSESSIONID只能通过在线获取了，怎么获取到JSESSIONID呢？当然是curl大法。</p>
 </li>
 <li><p>首先通过ssh以root身份连接到OpenWRT中，然后安装curl，毕竟K2的闪存很小，所以很多东西需要自己安装，之所以选择OpenWRT就是因为自带了opkg管理器，可以免去小白重新编译固件去集成curl的步骤，登录后分别执行下面的命令：</p>
