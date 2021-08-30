@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="7月 23, 2018">
-        <meta property="article:modified_time" content="7月 25, 2018">
+        <meta property="article:modified_time" content="8月 30, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "Node小提示",
     "url": "http://lizhenghlh.github.io/2018/07/23/Node小提示/index.html",
     "datePublished": "7月 23, 2018",
-    "dateModified": "7月 25, 2018",
+    "dateModified": "8月 30, 2021",
     "description": "一枚程序猿的日常",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -326,19 +326,20 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在做开发的过程中，经常会遇到一些场景使用到Node，比如构建前端项目或者使用Hexo写博客，这批文章主要记录我在使用Node过程中遇到的一些问题和解决方案。"><span class="post-toc-number">1.</span> <span class="post-toc-text">在做开发的过程中，经常会遇到一些场景使用到Node，比如构建前端项目或者使用Hexo写博客，这批文章主要记录我在使用Node过程中遇到的一些问题和解决方案。</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NPM相关"><span class="post-toc-number"></span> <span class="post-toc-text">NPM相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用Node就必不可少的会使用到npm，但是因为一些你知我知的原因，我们的网络访问npm的速度是很感人的，通常我们会选择使用cnpm来加速。"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用Node就必不可少的会使用到npm，但是因为一些你知我知的原因，我们的网络访问npm的速度是很感人的，通常我们会选择使用cnpm来加速。</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cnpm："><span class="post-toc-number"></span> <span class="post-toc-text">cnpm：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装cnpm"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装cnpm</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#之后我们在执行npm命令时，只要将npm替换为cnpm即可。"><span class="post-toc-number">2.</span> <span class="post-toc-text">之后我们在执行npm命令时，只要将npm替换为cnpm即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#原命令："><span class="post-toc-number">3.</span> <span class="post-toc-text">原命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现命令："><span class="post-toc-number">4.</span> <span class="post-toc-text">现命令：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#yarn"><span class="post-toc-number"></span> <span class="post-toc-text">yarn:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#yarn是我最喜欢的工具，也是我一直在用的。"><span class="post-toc-number">1.</span> <span class="post-toc-text">yarn是我最喜欢的工具，也是我一直在用的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装yarn，Ubuntu的安装命令："><span class="post-toc-number">2.</span> <span class="post-toc-text">安装yarn，Ubuntu的安装命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Mac的安装命令："><span class="post-toc-number">3.</span> <span class="post-toc-text">Mac的安装命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装完成后执行yarn-version即可查看版本信息。"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装完成后执行yarn --version即可查看版本信息。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#然后用yarn命令代替npm即可。"><span class="post-toc-number">5.</span> <span class="post-toc-text">然后用yarn命令代替npm即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#原命令"><span class="post-toc-number">6.</span> <span class="post-toc-text">原命令:</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现命令：-1"><span class="post-toc-number">7.</span> <span class="post-toc-text">现命令：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#yarn小技巧："><span class="post-toc-number"></span> <span class="post-toc-text">yarn小技巧：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#用淘宝的源替换yarn的官方源："><span class="post-toc-number">1.</span> <span class="post-toc-text">用淘宝的源替换yarn的官方源：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#执行yarn-config-get-registry我们可以发现yarn的官方源是https-registry-yarnpkg-com，我们执行yarn-config-set-registry-https-registry-npm-taobao-org。这样一来yarn安装依赖的速度会快很多。"><span class="post-toc-number">2.</span> <span class="post-toc-text">执行yarn config get registry我们可以发现yarn的官方源是https://registry.yarnpkg.com，我们执行yarn config set registry https://registry.npm.taobao.org。这样一来yarn安装依赖的速度会快很多。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Node小技巧"><span class="post-toc-number"></span> <span class="post-toc-text">Node小技巧</span></a>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在做开发的过程中，经常会遇到一些场景使用到Node，比如构建前端项目或者使用Hexo写博客，这批文章主要记录我在使用Node过程中遇到的一些问题和解决方案。"><span class="post-toc-number">1.</span> <span class="post-toc-text">在做开发的过程中，经常会遇到一些场景使用到Node，比如构建前端项目或者使用Hexo写博客，这批文章主要记录我在使用Node过程中遇到的一些问题和解决方案。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NPM相关"><span class="post-toc-number"></span> <span class="post-toc-text">NPM相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用Node就必不可少的会使用到npm，但是因为一些你知我知的原因，我们的网络访问npm的速度是很感人的，通常我们会选择使用cnpm来加速。"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用Node就必不可少的会使用到npm，但是因为一些你知我知的原因，我们的网络访问npm的速度是很感人的，通常我们会选择使用cnpm来加速。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cnpm："><span class="post-toc-number"></span> <span class="post-toc-text">cnpm：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装cnpm"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装cnpm</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#之后我们在执行npm命令时，只要将npm替换为cnpm即可。"><span class="post-toc-number">2.</span> <span class="post-toc-text">之后我们在执行npm命令时，只要将npm替换为cnpm即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#原命令："><span class="post-toc-number">3.</span> <span class="post-toc-text">原命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现命令："><span class="post-toc-number">4.</span> <span class="post-toc-text">现命令：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#yarn"><span class="post-toc-number"></span> <span class="post-toc-text">yarn:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#yarn是我最喜欢的工具，也是我一直在用的。"><span class="post-toc-number">1.</span> <span class="post-toc-text">yarn是我最喜欢的工具，也是我一直在用的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装yarn，Ubuntu的安装命令："><span class="post-toc-number">2.</span> <span class="post-toc-text">安装yarn，Ubuntu的安装命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Mac的安装命令："><span class="post-toc-number">3.</span> <span class="post-toc-text">Mac的安装命令：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装完成后执行yarn-version即可查看版本信息。"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装完成后执行yarn --version即可查看版本信息。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#然后用yarn命令代替npm即可。"><span class="post-toc-number">5.</span> <span class="post-toc-text">然后用yarn命令代替npm即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#原命令"><span class="post-toc-number">6.</span> <span class="post-toc-text">原命令:</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现命令：-1"><span class="post-toc-number">7.</span> <span class="post-toc-text">现命令：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#yarn小技巧："><span class="post-toc-number"></span> <span class="post-toc-text">yarn小技巧：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#用淘宝的源替换yarn的官方源："><span class="post-toc-number">1.</span> <span class="post-toc-text">用淘宝的源替换yarn的官方源：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#执行yarn-config-get-registry我们可以发现yarn的官方源是https-registry-yarnpkg-com，我们执行yarn-config-set-registry-https-registry-npm-taobao-org。这样一来yarn安装依赖的速度会快很多。"><span class="post-toc-number">2.</span> <span class="post-toc-text">执行yarn config get registry我们可以发现yarn的官方源是https://registry.yarnpkg.com，我们执行yarn config set registry https://registry.npm.taobao.org。这样一来yarn安装依赖的速度会快很多。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Node小技巧"><span class="post-toc-number"></span> <span class="post-toc-text">Node小技巧</span></a>
         <!--
         <li class="mdl-menu__item">
             Some Action
         </li>
         -->
-    </li></ul>
+    </ul>
     
 
 
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/Node-npm-cnpm-yarn/">Node,npm,cnpm,yarn</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -514,7 +515,7 @@
 <h5 id="安装完成后执行yarn-version即可查看版本信息。"><a href="#安装完成后执行yarn-version即可查看版本信息。" class="headerlink" title="安装完成后执行yarn --version即可查看版本信息。"></a>安装完成后执行<code>yarn --version</code>即可查看版本信息。</h5><h5 id="然后用yarn命令代替npm即可。"><a href="#然后用yarn命令代替npm即可。" class="headerlink" title="然后用yarn命令代替npm即可。"></a>然后用yarn命令代替npm即可。</h5><h5 id="原命令"><a href="#原命令" class="headerlink" title="原命令:"></a>原命令:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <h5 id="现命令：-1"><a href="#现命令：-1" class="headerlink" title="现命令："></a>现命令：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn	//连install和i都省了😁</span><br></pre></td></tr></table></figure>
 <h4 id="yarn小技巧："><a href="#yarn小技巧：" class="headerlink" title="yarn小技巧："></a>yarn小技巧：</h4><h5 id="用淘宝的源替换yarn的官方源："><a href="#用淘宝的源替换yarn的官方源：" class="headerlink" title="用淘宝的源替换yarn的官方源："></a>用淘宝的源替换yarn的官方源：</h5><h5 id="执行yarn-config-get-registry我们可以发现yarn的官方源是https-registry-yarnpkg-com，我们执行yarn-config-set-registry-https-registry-npm-taobao-org。这样一来yarn安装依赖的速度会快很多。"><a href="#执行yarn-config-get-registry我们可以发现yarn的官方源是https-registry-yarnpkg-com，我们执行yarn-config-set-registry-https-registry-npm-taobao-org。这样一来yarn安装依赖的速度会快很多。" class="headerlink" title="执行yarn config get registry我们可以发现yarn的官方源是https://registry.yarnpkg.com，我们执行yarn config set registry https://registry.npm.taobao.org。这样一来yarn安装依赖的速度会快很多。"></a>执行<code>yarn config get registry</code>我们可以发现yarn的官方源是<strong><a href="https://registry.yarnpkg.com" target="_blank" rel="noopener">https://registry.yarnpkg.com</a></strong>，我们执行<code>yarn config set registry https://registry.npm.taobao.org</code>。这样一来yarn安装依赖的速度会快很多。</h5><h1 id="Node小技巧"><a href="#Node小技巧" class="headerlink" title="Node小技巧"></a>Node小技巧</h1><p>有时候我需要搭建一个静态文件服务器来查看html网页或者文件，这时候如果去配置Nginx的话不免有些大材小用，这时候一个简单的node文件就可以解决，新建文件，文件内容如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">"connect"</span>);</span><br><span class="line"><span class="keyword">var</span> serveStatic = <span class="built_in">require</span>(<span class="string">"serve-static"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = connect();</span><br><span class="line">app.use(serveStatic(<span class="string">"/home/zhenglee/node/demo/dist"</span>));	<span class="comment">//静态文件目录</span></span><br><span class="line">app.listen(<span class="number">5000</span>);	<span class="comment">//端口</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">"connect"</span>);</span><br><span class="line"><span class="keyword">var</span> serveStatic = <span class="built_in">require</span>(<span class="string">"serve-static"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = connect();</span><br><span class="line">app.use(serveStatic(<span class="string">"/home/yourname/node/demo/dist"</span>));	<span class="comment">//静态文件目录</span></span><br><span class="line">app.listen(<span class="number">5000</span>);	<span class="comment">//端口</span></span><br></pre></td></tr></table></figure>
 <p>保存为httpserver.js，执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install connect serve-static</span><br><span class="line">node httpserver.js</span><br></pre></td></tr></table></figure>
 <p>这时候打开网页，访问<a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a> 即可。</p>
@@ -533,7 +534,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/23/Node小提示/"></div>
+<div id="SOHUCS" sid="2018/07/23/Node小提示/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -664,7 +665,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -682,7 +683,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -723,7 +724,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -943,6 +944,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>

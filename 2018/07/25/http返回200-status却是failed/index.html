@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="7月 25, 2018">
-        <meta property="article:modified_time" content="7月 25, 2018">
+        <meta property="article:modified_time" content="8月 30, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "http返回200,status却是failed",
     "url": "http://lizhenghlh.github.io/2018/07/25/http返回200-status却是failed/index.html",
     "datePublished": "7月 25, 2018",
-    "dateModified": "7月 25, 2018",
+    "dateModified": "8月 30, 2021",
     "description": "一枚程序猿的日常",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -326,7 +326,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/疑难杂症/">疑难杂症</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -504,7 +505,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p><strong>今天刚到公司，就有前端同学说刚部署的前端代码在访问的时候网页一篇空白，我部署了一版一看，还真是这样，再三确认前端同学在本地构建并访问没有任何问题，紧接着微信就响起来了，其他兄弟公司的项目也都出了问题，我赶紧打开网页查看，果然所有网页都是空白，更神奇的是Chrome报了如下的问题：</strong></p>
-<p><img src="/img/za/1.jpeg" alt="status显示failed"><br><img src="/img/za/2.jpeg" alt="http code显示200"><br><strong>文档状态显示failed，但是http状态码确是200。😂</strong><br><strong>这真是奇了怪了，我问后端同学也没人见过这样的问题。</strong></p>
+<p><img src="/images/za/1.jpeg" alt="status显示failed"><br><img src="/images/za/2.jpeg" alt="http code显示200"><br><strong>文档状态显示failed，但是http状态码确是200。😂</strong><br><strong>这真是奇了怪了，我问后端同学也没人见过这样的问题。</strong></p>
 <p><strong>紧接着我去查看Nginx的log，也没发现什么问题。这时候微信和电话已经开始轮番轰炸了，大家都在问项目怎么访问不了。最后只得一级一级的排查，在最后ssh登录网关机查看Nginx的时候，我刚输入<code>cd</code>，再按tab键补全路径的时候，系统显示如下：</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cannot create temp file <span class="keyword">for</span> here-document: No space left on device</span><br></pre></td></tr></table></figure>
 <p><strong>原来是磁盘空间不足了，所以Nginx无法完成中转，直觉告诉我应该是系统内的Docker镜像太多了，当键入<code>docker images</code>的时候，好么，果然问题在这，再删除了一些不用的镜像后，问题解决，所有网站恢复正常。</strong></p>
@@ -523,7 +524,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/25/http返回200-status却是failed/"></div>
+<div id="SOHUCS" sid="2018/07/25/http返回200-status却是failed/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -654,7 +655,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -672,7 +673,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -713,7 +714,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -933,6 +934,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>

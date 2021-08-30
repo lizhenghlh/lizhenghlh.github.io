@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -326,19 +326,20 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下-Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。"><span class="post-toc-number">1.</span> <span class="post-toc-text">熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下@Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在了解了corn的表达式语法后可以做些什么："><span class="post-toc-number">2.</span> <span class="post-toc-text">在了解了corn的表达式语法后可以做些什么：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我用corn做了什么："><span class="post-toc-number">3.</span> <span class="post-toc-text">我用corn做了什么：</span></a></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#corn表达式："><span class="post-toc-number"></span> <span class="post-toc-text">corn表达式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#结构：从左到右-空格隔开-：秒-分-时-日-月-星期-年份-年份可选"><span class="post-toc-number">1.</span> <span class="post-toc-text">结构：从左到右(空格隔开)：秒 分 时 日 月 星期 年份(年份可选)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字段含义："><span class="post-toc-number">2.</span> <span class="post-toc-text">字段含义：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常用表达式样例："><span class="post-toc-number">3.</span> <span class="post-toc-text">常用表达式样例：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。"><span class="post-toc-number">4.</span> <span class="post-toc-text">其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下-Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。"><span class="post-toc-number">1.</span> <span class="post-toc-text">熟悉Linux或者后端开发的同学一定都遇到过执行定时任务的需求，其实不管是Linux下的corntab命令，还是Spring下@Scheduled注解，亦或是Quartz以及其他语言中的定时任务框架，都使用的是类似corn语法的表达式，所以了解corn表达式的语法是很有必要的。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在了解了corn的表达式语法后可以做些什么："><span class="post-toc-number">2.</span> <span class="post-toc-text">在了解了corn的表达式语法后可以做些什么：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我用corn做了什么："><span class="post-toc-number">3.</span> <span class="post-toc-text">我用corn做了什么：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#corn表达式："><span class="post-toc-number"></span> <span class="post-toc-text">corn表达式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#结构：从左到右-空格隔开-：秒-分-时-日-月-星期-年份-年份可选"><span class="post-toc-number">1.</span> <span class="post-toc-text">结构：从左到右(空格隔开)：秒 分 时 日 月 星期 年份(年份可选)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#字段含义："><span class="post-toc-number">2.</span> <span class="post-toc-text">字段含义：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常用表达式样例："><span class="post-toc-number">3.</span> <span class="post-toc-text">常用表达式样例：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。"><span class="post-toc-number">4.</span> <span class="post-toc-text">其实上述的表达式只要做到随用随查就好，所以最好大家都收藏或者记录下。</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
         </li>
         -->
-    </li></ul>
+    </ul>
     
 
 
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/corntab-corn-定时任务/">corntab,corn,定时任务</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -670,7 +671,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/30/corn表达式/"></div>
+<div id="SOHUCS" sid="2018/07/30/corn表达式/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -801,7 +802,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -819,7 +820,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -860,7 +861,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -1080,6 +1081,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="8月 09, 2018">
-        <meta property="article:modified_time" content="8月 09, 2018">
+        <meta property="article:modified_time" content="8月 30, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "路由器认证校园网的一个思路",
     "url": "http://lizhenghlh.github.io/2018/08/09/路由器认证校园网的一个思路/index.html",
     "datePublished": "8月 09, 2018",
-    "dateModified": "8月 09, 2018",
+    "dateModified": "8月 30, 2021",
     "description": "一枚程序猿的日常",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -326,7 +326,8 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/校园网-路由器-portal/">校园网,路由器,portal</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -511,21 +512,21 @@
 <h1 id="Show-Time"><a href="#Show-Time" class="headerlink" title="Show Time"></a>Show Time</h1><p>首先就是使用抓包工具，Web认证的话Chrome足矣，如果是客户端，可以尝试Charles和Fiddler。</p>
 <ul>
 <li><p>打开Chrome，进入认证的网页，输入你的认证账号和密码，但是<strong>不要点</strong>认证或者登陆按钮，这时打开<strong>开发者工具</strong>视图，选择<strong>Network</strong>节点，勾上<strong>Preserve log</strong> 。</p>
-<p><img src="/img/portal/1.png" alt></p>
+<p><img src="/images/portal/1.png" alt=""></p>
 <hr>
 </li>
 <li><p>然后点击认证或者登陆，出现下图。</p>
-<p><img src="/img/portal/2.png" alt></p>
+<p><img src="/images/portal/2.png" alt=""></p>
 <hr>
 </li>
 <li><p>右键选中第一项最可疑的链接，然后<strong>Copy</strong>，再<strong>Copy as cURL</strong>，最后粘贴到记事本。</p>
-<p><img src="/img/portal/3.png" alt></p>
-<p><img src="/img/portal/4.png" alt></p>
+<p><img src="/images/portal/3.png" alt=""></p>
+<p><img src="/images/portal/4.png" alt=""></p>
 <hr>
 </li>
 <li><p>得到下面的内容，就可以搜寻你认为可疑的内容了，然后你要做的就是动态改变需要的参数就可以。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http://x.x.x.x/Login?para=abcdefghijklmnopqrstuvwxyz==&amp;_=1533804052510'</span> -H <span class="string">'Pragma: no-cache'</span> -H <span class="string">'Accept-Encoding: gzip, deflate'</span> -H <span class="string">'Accept-Language: zh-CN,zh;q=0.9,und;q=0.8,en;q=0.7,zh-TW;q=0.6'</span> -H <span class="string">'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36'</span> -H <span class="string">'Accept: */*'</span> -H <span class="string">'Referer: http://10.0.0.253/Index.jsp?hwid=00:00:00:00:00:00&amp;devip=10.0.0.252&amp;devport=0&amp;vlan=0'</span> -H <span class="string">'Cookie: JSESSIONID=57516FB172738FCEA999C2526AED0F5D'</span> -H <span class="string">'Connection: keep-alive'</span> -H <span class="string">'Cache-Control: no-cache'</span> --compressed</span><br></pre></td></tr></table></figure>
-<p><img src="/img/portal/5.png" alt></p>
+<p><img src="/2018/08/09/路由器认证校园网的一个思路/portal/5.png" alt=""></p>
 <p>比如para后面的文本(我已经替换成了abcd…xyz)，很明显这个就是你账号密码生成的参数，紧接着的自然就是毫秒时间戳了(眼尖的你一定看出来了)，再有一个就是Cookie中的JSESSIONID了，para可以记录下，时间戳可以自己生成，但是JSESSIONID只能通过在线获取了，怎么获取到JSESSIONID呢？当然是curl大法。</p>
 </li>
 <li><p>首先通过ssh以root身份连接到OpenWRT中，然后安装curl，毕竟K2的闪存很小，所以很多东西需要自己安装，之所以选择OpenWRT就是因为自带了opkg管理器，可以免去小白重新编译固件去集成curl的步骤，登录后分别执行下面的命令：</p>
@@ -557,7 +558,7 @@
 </li>
 </ul>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面的脚本只是一个参考版本，建议大家去改成更完善的shell脚本，其他的校园网都是同理的，如果你实现了这个，其他的基本就没有什么问题了。</p>
-<p>搭建$$乳也是非常简单的，有可能违规，就不给大家介绍了，只有网上搜一个适用于OpenWRT的ipk文件，scp到路由器里安装重启就可以在web页面进行设置了。</p>
+<p>搭建$$乳也是非常简单的，有可能违规，就不给大家介绍了，只要网上搜一个适用于OpenWRT的ipk文件，scp到路由器里安装重启就可以在web页面进行设置了。</p>
 
     
 
@@ -573,7 +574,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/08/09/路由器认证校园网的一个思路/"></div>
+<div id="SOHUCS" sid="2018/08/09/路由器认证校园网的一个思路/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -704,7 +705,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -722,7 +723,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -763,7 +764,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -983,6 +984,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>

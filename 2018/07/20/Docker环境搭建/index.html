@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -326,13 +326,14 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答-”Docker“。"><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答:”Docker“。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。"><span class="post-toc-number">1.0.0.0.2.</span> <span class="post-toc-text">什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker："><span class="post-toc-number">1.0.0.0.3.</span> <span class="post-toc-text">关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker：</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#场景1"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">场景1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。"><span class="post-toc-number">2.0.1.0.1.</span> <span class="post-toc-text">还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下"><span class="post-toc-number">2.0.1.0.2.</span> <span class="post-toc-text">如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。"><span class="post-toc-number">2.0.1.0.3.</span> <span class="post-toc-text">好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下"><span class="post-toc-number">2.0.1.0.4.</span> <span class="post-toc-text">假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个密码为123456，端口为5432的postgres服务就有了。"><span class="post-toc-number">2.0.1.0.5.</span> <span class="post-toc-text">一个密码为123456，端口为5432的postgres服务就有了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。"><span class="post-toc-number">2.0.1.0.6.</span> <span class="post-toc-text">当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#场景3"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">场景3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。"><span class="post-toc-number">2.0.2.0.1.</span> <span class="post-toc-text">现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Docker官网文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Docker官网文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子"><span class="post-toc-number">3.0.0.0.1.</span> <span class="post-toc-text">因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。"><span class="post-toc-number">4.0.0.0.1.</span> <span class="post-toc-text">今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。</span></a></li></ol></li>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答-”Docker“。"><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">相信不管你是刚踏入互联网圈，还是已经摸爬滚打了几年，你一定听说过容器技术。但是要说当下最火的容器技术是什么，技术人员一定异口同声的回答:”Docker“。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。"><span class="post-toc-number">1.0.0.0.2.</span> <span class="post-toc-text">什么样的技术人员适合学Docker呢？我认为后端同学和对新技术敏感的同学最合适，这样才能跟得上技术的潮流，使自己不被淘汰。当然正在上学的学生学习Docker对自己找实习机会和找工作也会十分有利的，毕竟技多不压身。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker："><span class="post-toc-number">1.0.0.0.3.</span> <span class="post-toc-text">关于的Docker的详细介绍在网上已经多得不能再多了，大家只要百度或者Google一下就能获取到大量的资料，所以我就不在这详细介绍了，下面我就说下我在工作中为什么会选择Docker：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#场景1"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">场景1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。"><span class="post-toc-number">2.0.1.0.1.</span> <span class="post-toc-text">还记得上学的时候，学习新语言的第一天老师总会教大家如何搭建环境。比如在安装Mysql的时候，学校机房的电脑，你自己的笔记本，再加上各种不一样的Windows版本，不同的Linux发行版，总是让学生出现各种各样的问题。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下"><span class="post-toc-number">2.0.1.0.2.</span> <span class="post-toc-text">如果那时候Docker存在的话就轻松解决了这个问题，我只要安装好Docker，然后执行下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。"><span class="post-toc-number">2.0.1.0.3.</span> <span class="post-toc-text">好了，一个root密码为123456的mysql服务就这样搭建好了，最多出现端口占用的问题，换个端口在执行一次即可。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下"><span class="post-toc-number">2.0.1.0.4.</span> <span class="post-toc-text">假如你现在需要跑某个开源的Demo，但是这个Demo使用的数据库你的电脑没有安装，。以PostgreSQL为例，这时候你只要执行下</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一个密码为123456，端口为5432的postgres服务就有了。"><span class="post-toc-number">2.0.1.0.5.</span> <span class="post-toc-text">一个密码为123456，端口为5432的postgres服务就有了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。"><span class="post-toc-number">2.0.1.0.6.</span> <span class="post-toc-text">当然你还可以指定各种版本，这样就相当于在电脑或服务器中装了多个版本的服务。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#场景3"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">场景3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。"><span class="post-toc-number">2.0.2.0.1.</span> <span class="post-toc-text">现在后端最火的技术当属微服务了。以电商项目为例，在商促期间访问压力大的模块都在秒杀上，这时候如果我们采用了Docker镜像来部署，只需要重新启动一个或者多个秒杀模块就解决了问题，在商促结束后停止掉额外启动的秒杀模块，这样就达到了弹性伸缩的目的，节省了服务器的资源。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Docker官网文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Docker官网文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子"><span class="post-toc-number">3.0.0.0.1.</span> <span class="post-toc-text">因为我家里的服务器使用ESXi跑着一个Ubuntu的实例，我就以Ubuntu为例子</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。"><span class="post-toc-number">4.0.0.0.1.</span> <span class="post-toc-text">今天仅仅是介绍了如何安装Docker和配置加速器，后面我还会分享一些Docker在具体项目中应用，敬请期待。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/Docker/">Docker</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -554,7 +555,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/20/Docker环境搭建/"></div>
+<div id="SOHUCS" sid="2018/07/20/Docker环境搭建/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -685,7 +686,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -703,7 +704,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -744,7 +745,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -964,6 +965,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="7月 26, 2018">
-        <meta property="article:modified_time" content="7月 25, 2018">
+        <meta property="article:modified_time" content="8月 30, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "ESXi下安装Lede软路由",
     "url": "http://lizhenghlh.github.io/2018/07/26/ESXi下安装Lede软路由/index.html",
     "datePublished": "7月 26, 2018",
-    "dateModified": "7月 25, 2018",
+    "dateModified": "8月 30, 2021",
     "description": "一枚程序猿的日常",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -326,19 +326,20 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><span class="post-toc-number">1.</span> <span class="post-toc-text">上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><span class="post-toc-number">2.</span> <span class="post-toc-text">现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><span class="post-toc-number">3.</span> <span class="post-toc-text">昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><span class="post-toc-number">4.</span> <span class="post-toc-text">先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><span class="post-toc-number">5.</span> <span class="post-toc-text">至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><span class="post-toc-number">6.</span> <span class="post-toc-text">上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"><span class="post-toc-number">7.</span> <span class="post-toc-text">其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">准备工作</span></a>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上个月把家里的gen8升级到e3-1230-v2和16G-ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。"><span class="post-toc-number">1.</span> <span class="post-toc-text">上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺便趁着618新入了一块4T的NAS红盘，为的就是能愉快的玩虚拟化。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#现在家里的gen8已经安装好ESXi-6-5，并且跑着一个Ubuntu16-04和一个群晖6-5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18-04来玩爽了。"><span class="post-toc-number">2.</span> <span class="post-toc-text">现在家里的gen8已经安装好ESXi 6.5，并且跑着一个Ubuntu16.04和一个群晖6.5。虽然gen8只是微型服务器，但是仅仅跑这两个虚拟机还是绰绰有余的，剩余的技能完全足够再开一个软路由和一台Ubuntu18.04来玩爽了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。"><span class="post-toc-number">3.</span> <span class="post-toc-text">昨晚已经收到在深水宝买的8口千兆交换机，支持网管和链路聚合。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有："><span class="post-toc-number">4.</span> <span class="post-toc-text">先说下我使用软路由的需求，基本跟我使用梅林的需求一样，因为现在家里使用的是网件的路由器刷的梅林固件，我使用的插件主要有：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。"><span class="post-toc-number">5.</span> <span class="post-toc-text">至于为什么要切换到软路由呢，主要就是R6400每次开启KoolProxy都会造成网速慢很多，有时候连图片都加载不出来，我猜测可能是R6400机能太弱或者KoolProxy优化的不好的原因，切到软路由的话，R6400只要专心的做一个AP就好了。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。"><span class="post-toc-number">6.</span> <span class="post-toc-text">上网调研了一下，目前软路由主要有Lede，爱快，海蜘蛛等等，最终我选择的是Lede。</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂"><span class="post-toc-number">7.</span> <span class="post-toc-text">其实Lede也就是现在的OpenWRT，因为又合并到一起了。😂</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number"></span> <span class="post-toc-text">准备工作</span></a>
         <!--
         <li class="mdl-menu__item">
             Some Action
         </li>
         -->
-    </li></ul>
+    </ul>
     
 
 
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/ESXi-Lede-软路由-OpenWRT/">ESXi,Lede,软路由,OpenWRT</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -517,29 +518,29 @@
 <li><p>打开固件<a href="http://firmware.koolshare.cn/LEDE_X64_fw867/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AC%E7%9B%98%E6%88%96PE%E4%B8%8B%E5%86%99%E7%9B%98%E4%B8%93%E7%94%A8/" target="_blank" rel="noopener">下载链接</a>，选择版本，我下载的是v2.6的版本，下载后解压出img文件。但是安装完之后我才知道Lede已经合并回OpenWrt，所以你可以直接下载OpenWrt的2.15版本。</p>
 </li>
 <li><p>下载StarWind V2V Converter并安装，打开后</p>
-<p><img src="/img/lede/1.png" alt="1"><br><img src="/img/lede/2.png" alt="2"></p>
-<p><img src="/img/lede/3.png" alt="3"></p>
-<p><img src="/img/lede/4.png" alt="4"></p>
-<p><img src="/img/lede/5.png" alt="5"></p>
-<p><img src="/img/lede/6.png" alt="6"></p>
-<p><img src="/img/lede/7.png" alt="7"></p>
+<p><img src="/images/lede/1.png" alt="1"><br><img src="/images/lede/2.png" alt="2"></p>
+<p><img src="/images/lede/3.png" alt="3"></p>
+<p><img src="/images/lede/4.png" alt="4"></p>
+<p><img src="/images/lede/5.png" alt="5"></p>
+<p><img src="/images/lede/6.png" alt="6"></p>
+<p><img src="/images/lede/7.png" alt="7"></p>
 <p>生成了2个文件，这时候登录ESXi的web管理界面，在数据存储浏览器中将刚才生成的文件上传进去，上传完成之后你会发现两个文件变成了一个，这是正常的。</p>
 </li>
 <li><p>在web界面的网络节点中选中vSwitch0，然后点击右边的编辑设置，按下图设置好保存：</p>
-<p><img src="/img/lede/s1.png" alt="s1"></p>
+<p><img src="/images/lede/s1.png" alt="s1"></p>
 </li>
 <li><p>添加一个新的虚拟交换机vSwitch1，按下图设置后点击添加：</p>
-<p><img src="/img/lede/s2.png" alt="s2"></p>
+<p><img src="/images/lede/s2.png" alt="s2"></p>
 </li>
 <li><p>添加端口组，并关联至vSwitch1，如下图：</p>
-<p><img src="/img/lede/s3.png" alt="s3"></p>
+<p><img src="/images/lede/s3.png" alt="s3"></p>
 </li>
 <li><p>注册新的虚拟机，选择<strong>Linux类型</strong>，操作系统选择“<strong>其他Linux 64位</strong>”，删掉默认分配的硬盘，选择我们刚才上传的<strong>lede-v2.6.vmdk</strong>，然后添加新的网络适配器并选择刚才创建的<strong>VM Network1</strong>，然后保存。</p>
 </li>
 <li><p>此时先选中刚刚创建好的lede虚拟机右键—&gt;自动启动—&gt;开启。</p>
 </li>
 <li><p>这时候主要打开虚拟机的电源就好了，然后查看控制台，直到控制台不在刷新的时候敲一下回车，你会看到下图：</p>
-<p><img src="/img/lede/l1.png" alt="l1"></p>
+<p><img src="/images/lede/l1.png" alt="l1"></p>
 </li>
 <li><p>距离成功只差一步了，那就是设置路由器的LAN IP ，控制台上键入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/config</span><br><span class="line">cp network network.bak</span><br><span class="line">vim /etc/config/network</span><br></pre></td></tr></table></figure>
@@ -549,7 +550,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/network restart</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>万事俱备只欠东风了，最后就是访问<a href="http://192.168.0.1" target="_blank" rel="noopener">http://192.168.0.1</a> ，如果让提示让你输入密码，恭喜你，Lede安装完成，如下图所示：</p>
-<p><img src="/img/lede/l2.png" alt="l2"></p>
+<p><img src="/images/lede/l2.png" alt="l2"></p>
 </li>
 </ol>
 
@@ -567,7 +568,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2018/07/26/ESXi下安装Lede软路由/"></div>
+<div id="SOHUCS" sid="2018/07/26/ESXi下安装Lede软路由/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -698,7 +699,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -716,7 +717,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -757,7 +758,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -977,6 +978,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>

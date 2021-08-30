@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head><meta name="generator" content="Hexo 3.8.0">
+    <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="8月 22, 2021">
-        <meta property="article:modified_time" content="8月 24, 2021">
+        <meta property="article:modified_time" content="8月 25, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "OMV安装IYUUAutoReseed",
     "url": "http://lizhenghlh.github.io/2021/08/22/OMV安装IYUUAutoReseed/index.html",
     "datePublished": "8月 22, 2021",
-    "dateModified": "8月 24, 2021",
+    "dateModified": "8月 25, 2021",
     "description": "一枚程序猿的日常",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -326,13 +326,14 @@
     -->
 
     <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">方案</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#折腾"><span class="post-toc-number">3.</span> <span class="post-toc-text">折腾</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -384,7 +385,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -425,7 +426,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/PT-IYUU/">PT,IYUU</a>
-    </li></ul>
+    </ul>
     
 
     <!-- Share -->
@@ -503,12 +504,12 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>今年迁移了一下服务器的硬盘，30T左右的硬盘数据迁移成了我最头疼的问题，俗话说的话“一入PT深似海，从此硬盘没钱买”，因为今年硬盘价格的疯涨，造成我感觉多余的3块12T盘拆封了自用简直就是奢侈，所以还是消停拿出新腾出的2块4T来回输送整理数据，整理了整整一天。</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>今年迁移了一下服务器的硬盘，30T左右的硬盘数据迁移成了我最头疼的问题，俗话说的话“一入PT深似海，从此硬盘没钱买”，因为今年硬盘价格的疯涨，造成我感觉多余的3块12T盘拆封了自用简直就是奢侈，所以还是消停拿出新腾出的2块4T来回输送整理数据，整理了整整一天。</p>
 <p>本来今年的计划是逃离OMV，拥抱TrueNAS的。今年公司的Gitlab我也从公网迁移到了公司的内网服务器，选择的方案就是3块紫盘组的raidz1，其实raidz2是更好的方案，但是硬盘的价格你懂得，没有选择raid5也是为了要强上ZFS，ZFS不用多说，玩NAS和Linux的都知道，两个字：好用。不光Gitlab，开发的公共文件，前端的静态文件，设计人员的设计图我也分别开了NFS，SMB等，极大的提高了团队共享文件的效率。</p>
 <p>而自己家里没有选择TrueNAS的原因无非就是上ZFS的成本实在太高，不用ZFS的话自然而然没必要强上TrueNAS了，所以还是老老实实用OMV，毕竟OMV对Docker支持的更好。</p>
 <p>作为Pter，都饱受辅种的烦恼，A站下了一个资源，正好B站和C站还有D站也都有这个资源，所以只好去BCD站分别下载种子然后添加任务完成校验去辅种，这个过程真的太难熬，作为收割机的我想要的大站都已收入囊中，剩下的就是赚魔力积分了，早就听过IYUU自动辅种，今天就尝试下，记录下折腾的过程。</p>
-<p>先说方案，我的OMV是虚拟机直通HBA卡的方案，所以OMV的系统盘只分了30G，我不想在OMV跑太多的服务，毕竟它只是个NAS系统，跑文件服务足矣，为了PT，勉强上了Transmission，qBittorrent也是走docker的方案，数据盘全部挂在3T的缓存盘。</p>
-<p>其实IYUU的文档还是挺全的，感觉小白上手也就是5分钟，先ssh连到OMV，docker我之前早就安装好了，谷歌一下各种文档，开始我本想用docker-compose来的，结果看官方文档只是挂载了一个config.php的配置文件，就算了，先复制一份<a href="https://gitee.com/ledc/IYUUAutoReseed/raw/master/config/config.sample.php" target="_blank" rel="noopener">配置文件</a>，然后打开<a href="https://iyuu.cn/" target="_blank" rel="noopener">IYUU官网</a>申请<strong>IYUU令牌</strong>，微信扫一下即可，然后把<strong>IYUU</strong>令牌输到刚才复制的配置文件中<br><code>&#39;iyuu.cn&#39;        =&gt; &#39;你的IYUU令牌&#39;,</code></p>
+<h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>先说方案，我的OMV是虚拟机直通HBA卡的方案，所以OMV的系统盘只分了30G，我不想在OMV跑太多的服务，毕竟它只是个NAS系统，跑文件服务足矣，为了PT，勉强上了Transmission，qBittorrent也是走docker的方案，数据盘全部挂在3T的缓存盘。</p>
+<h1 id="折腾"><a href="#折腾" class="headerlink" title="折腾"></a>折腾</h1><p>其实IYUU的文档还是挺全的，感觉小白上手也就是5分钟，先ssh连到OMV，docker我之前早就安装好了，谷歌一下各种文档，开始我本想用docker-compose来的，结果看官方文档只是挂载了一个config.php的配置文件，就算了，先复制一份<a href="https://gitee.com/ledc/IYUUAutoReseed/raw/master/config/config.sample.php" target="_blank" rel="noopener">配置文件</a>，然后打开<a href="https://iyuu.cn/" target="_blank" rel="noopener">IYUU官网</a>申请<strong>IYUU令牌</strong>，微信扫一下即可，然后把<strong>IYUU</strong>令牌输到刚才复制的配置文件中<br><code>&#39;iyuu.cn&#39;        =&gt; &#39;你的IYUU令牌&#39;,</code></p>
 <p>之后填写Transmission的配置中的用户名密码(qBittorrent配置同理不再赘述)。</p>
 <p>PS：因为是docker部署，所以host中的127.0.0.1要改成你OMV的IP，不然启动会报错，这个玩过docker的童鞋应该都知道，简单解释就是如果还用127就是找容器自己，容器自己就是IYUU服务，Transmission是部署在宿主机的服务，这时候肯定连接不到，qBittorrent同理，只不过qBittorrent通过docker部署，然后把端口映射到宿主机。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(</span><br><span class="line">                <span class="string">'type'</span>	=&gt;	<span class="string">'transmission'</span>,	<span class="comment">// 支持：transmission、qBittorrent</span></span><br><span class="line">                <span class="string">'host'</span>	=&gt;	<span class="string">'http://192.168.0.11:9091/transmission/rpc'</span>,		<span class="comment">// 警告！注意：transmission/rpc这段别动，你只需要修改 127.0.0.1:9091</span></span><br><span class="line">                <span class="string">'username'</span>	=&gt;	<span class="string">'你的用户名'</span>,     <span class="comment">// 没有用户名请填写null</span></span><br><span class="line">                <span class="string">'password'</span>	=&gt;	<span class="string">'你的密码'</span>,     <span class="comment">// 没有密码  请填写null</span></span><br><span class="line">                <span class="string">'BT_backup'</span> =&gt;  <span class="string">'/torrents'</span>,                        <span class="comment">// 移动做种：如果脚本与当前客户端不在一台机器，必须配置</span></span><br><span class="line">                <span class="string">'move'</span>      =&gt;  <span class="number">0</span>,      <span class="comment">// 0不移动，1移动并辅种，2移动且只在当前客户端辅种</span></span><br><span class="line">            ),</span><br></pre></td></tr></table></figure>
@@ -519,7 +520,7 @@
 <p>PS：yourpath就是你刚才复制的config.php的存储路径。</p>
 <p>执行完成后通过<code>docker logs -f  IYUUAutoReseed</code>查看log即可。</p>
 <p>此时你去登录Tr和qB的界面就可以看到各种等待校验的种子，再也不用手动辅种了。当然有些转发的种子改了下载文件的目录结构或者文件名，这就很伤，所以在校验结束之前还是时不时看一眼进度，到时候数据超标就不好了。</p>
-<p>以上就是OMV安装IYUU的记录，至于为什么没有用IYUU Plus等带有web界面的镜像，其实主要就是因为多年以来的开发习惯，总觉得命令行比网页更直观地定位问题，而且单纯的IYUU也更节省系统资源的占用。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上就是OMV安装IYUU的记录，至于为什么没有用IYUU Plus等带有web界面的镜像，其实主要就是因为多年以来的开发习惯，总觉得命令行比网页更直观地定位问题，而且单纯的IYUU也更节省系统资源的占用。</p>
 
     
 
@@ -535,7 +536,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2021/08/22/OMV安装IYUUAutoReseed/"></div>
+<div id="SOHUCS" sid="2021/08/22/OMV安装IYUUAutoReseed/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = '';
@@ -658,7 +659,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
             <li>
                 <a class="sidebar_archives-link" href="/archives/2021/08/">八月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/02/">二月 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">7</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -676,7 +677,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <ul class="dropdown-menu">
                 <li>
                 <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ESXi/">ESXi<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Go/">Go<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Node/">Node<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PT/">PT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Spring/">Spring<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/生活职场/">生活职场<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/疑难杂症/">疑难杂症<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编译构建/">编译构建<span class="sidebar_archives-count">1</span></a>
-            </li></ul>
+            </ul>
         </li>
         
     
@@ -717,7 +718,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>
@@ -937,6 +938,6 @@ console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viose
 
                 </main>
             </div>
-        <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+        <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
     
 </html>
