@@ -8,8 +8,28 @@
     <atom:link href="/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>一枚程序猿的日常</description>
-    <pubDate>Wed, 25 Aug 2021 03:04:05 GMT</pubDate>
+    <pubDate>Fri, 24 Sep 2021 03:08:57 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>编译OpenJDK8</title>
+      <link>http://lizhenghlh.github.io/2021/09/23/%E7%BC%96%E8%AF%91OpenJDK8/</link>
+      <guid>http://lizhenghlh.github.io/2021/09/23/%E7%BC%96%E8%AF%91OpenJDK8/</guid>
+      <pubDate>Thu, 23 Sep 2021 11:01:28 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;随着JDK17的发布，越来越多的程序猿表示要JDK8用到死，虽然我也是这么想的😂，但是毕竟即将发布的Spring6和Spring
+          
+        
+      
+      </description>
+      
+      <comments>http://lizhenghlh.github.io/2021/09/23/%E7%BC%96%E8%AF%91OpenJDK8/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>OMV安装IYUUAutoReseed</title>

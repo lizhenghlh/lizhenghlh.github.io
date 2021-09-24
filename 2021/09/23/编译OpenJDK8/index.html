@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018/7 | 
+            编译OpenJDK8 | 
         
         Damon Lee &#39;s blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Damon Lee">
     <meta name="description" itemprop="description" content="一枚程序猿的日常">
-    <meta name="keywords" content="Java Android Devops Geek Docker">
+    <meta name="keywords" content="Java Android Devops Geek Docker,OpenJDK8,JDK8,编译">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lizhenghlh.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/7 | Damon Lee &#39;s blog">
+    <meta property="og:title" content="编译OpenJDK8 | Damon Lee &#39;s blog">
     <meta property="og:image" content="/img/avatar.jpg">
     <meta property="og:description" content="一枚程序猿的日常">
-    
+    <meta property="og:article:tag" content="OpenJDK8,JDK8,编译"> 
 
+    
+        <meta property="article:published_time" content="9月 23, 2021">
+        <meta property="article:modified_time" content="9月 24, 2021">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018/7 | Damon Lee &#39;s blog">
+    <meta name="twitter:title" content="编译OpenJDK8 | Damon Lee &#39;s blog">
     <meta name="twitter:description" content="一枚程序猿的日常">
     <meta name="twitter:image" content="/img/avatar.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lizhenghlh.github.io/archives/2018/07/index.html">
+        <link rel="canonical" href="http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Damon Lee &#39;s blog",
+        "logo": "/img/avatar.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Damon Lee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Talk is cheap ! Show me the code ! <br><br> 不要假装自己很努力，因为结果不会陪你演戏 ! "
+    },
+    "headline": "编译OpenJDK8",
+    "url": "http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html",
+    "datePublished": "9月 23, 2021",
+    "dateModified": "9月 24, 2021",
+    "description": "一枚程序猿的日常",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lizhenghlh.github.io"
+    }
+}
+</script>
 
 
     
@@ -273,494 +306,322 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#编译流程"><span class="post-toc-number">3.</span> <span class="post-toc-text">编译流程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/31/Spring Boot入门/">Spring Boot入门</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言我为什么会选择用Spring Boot来做Web项目，主要就是因为它支持yaml格式的配置，配合各种stater插件，让开发者终于不再为眼花缭乱的xml配置文件而头疼了。再加上其内嵌Tomcat，可以免去一些新手配置环境的烦恼。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/31/Spring Boot入门/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Spring/">Spring</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/31/Spring Boot入门/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/30/corn表达式/">corn表达式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/30/corn表达式/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 30, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Linux/">Linux</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/30/corn表达式/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/26/ESXi下安装Lede软路由/">ESXi下安装Lede软路由</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            上个月把家里的gen8升级到e3 1230 v2和16G ECC内存，顺...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/26/ESXi下安装Lede软路由/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ESXi/">ESXi</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/26/ESXi下安装Lede软路由/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/25/http返回200-status却是failed/">http返回200,status却是failed</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天刚到公司，就有前端同学说刚部署的前端代码在访问的时候网页一篇空白，我部署了一版一看，还真是这样，再三确认前端同学在本地构建并访问没有任何问题，紧接着微信就响起来了，其他兄弟公司的项目也都出了问题，我赶紧打开网页查看，果然所有网页都是空白，更神奇的是Chrome报了如下的问题：
-文档状态显示failed，...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/25/http返回200-status却是failed/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/疑难杂症/">疑难杂症</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/25/http返回200-status却是failed/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/23/Node小提示/">Node小提示</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            在做开发的过程中，...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/23/Node小提示/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Node/">Node</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/23/Node小提示/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/20/Docker环境搭建/">Docker环境搭建</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/20/Docker环境搭建/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/20/Docker环境搭建/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/19/Hello Go/">Hello Go!</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言要说当下什么语言最火，coder们自然而然就想到了Google爸爸推出的语言Go。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/19/Hello Go/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="Damon Lee's avatar">
-            </div>
-            <div>
-                <strong>Damon Lee</strong>
-                <span>7月 19, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Go/">Go</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/07/19/Hello Go/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                编译OpenJDK8
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Damon Lee</strong>
+        <span>9月 23, 2021</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2UlEQVR42u3aS27jMBAFQN//0jPbATJR3mvKsEKWVoGhhF30otOf158jnxc2NjY2NjY2Njb2I9mv+Pn6/r+f/OeYL29+d+IP4V7GkMSMjY2NfQI7Ofj68+trmgGuz2pjxsbGxj6BnYTeJq3rRDU7axgzNjY2NnZcYLTJ7/o68niwsbGxsfNjZg2gJC2tfA3Y2NjY2EmDJm8MteOEfHjwgV4aNjY29uPZ7aD3CT9/YL6NjY2N/Uh2+7Qj2Hes7Awjx8bGxt6UvbKOk7R11suJ9RUfbGxs7L3ZsxFsm2xmLafZuOLbi8bGxsbelJ2sRa4ksFl7KImk/kqwsbGxN2W3obfrlbPBQ1ssRcUPNjY29tbsNs0k7ae8CGnLjCSNFU0lbGxs7C3Yw3/uF1JR8lttoYKNjY19MjsfGCTlxKyAycuV4QVhY2Njb8puVxvft76TRzIsY7CxsbE3ZecLN/mSTdu+T8qYdvBQjwewsbGxfzn7roOTq8zT1c0LPdjY2NibsnNksRwzSm+zFFUUUdjY2Nhbs9sFnSTotghpryMpk7CxsbFPYOeHzX4rTz/tok8OxsbGxt6bvZK6kvfzRJWPjdtSChsbG3tvdhJEu/44K1HyhZ78wcbGxj6ZPRv0tvjZgDkvdbCxsbFPY7eD25WSY32EUF83NjY29qbsWfppE17Slso/ua2Xho2Njb0Fe1Yk5Evts7FxPtBdytvY2NjYm7KT9ZpZ42mdtJTqsLGxsTdl53+6Hcq2DaM8Kc5WObGxsbF3Za80hu66oDw5taMLbGxs7BPY7SJjPohtm/jtAmg9HsbGxsbemt0GtFJO5EkxHyokiRMbGxv7BHbbrGkHvXlracbDxsbGxr6r/FhZ97l+cylCbGxsbOyyeGjb+u8rV7CxsbHPYc9Cv2uVJ1+mbN/HxsbGPoHdDnrbltNsXTJ/Z9hUwsbGxt6Cfc6DjY2NjY2NjY2N/ZjnL/ewIIIu6UVTAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/OpenJDK8-JDK8-编译/">OpenJDK8,JDK8,编译</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=编译OpenJDK8&url=http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=编译OpenJDK8&url=http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html&via=Damon Lee" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Damon Lee &#39;s blog&title=编译OpenJDK8&summary=一枚程序猿的日常&pics=http://lizhenghlh.github.io/img/avatar.jpg&url=http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://lizhenghlh.github.io/2021/09/23/编译OpenJDK8/index.html&text=编译OpenJDK8" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>随着JDK17的发布，越来越多的程序猿表示要JDK8用到死，虽然我也是这么想的😂，但是毕竟即将发布的Spring6和Spring Boot3都是基于JDK17的，所以在这之前，逆一下潮流编译一次OpenJDK8，之所以一直没尝试过编译OpenJDK主要是觉得太简单，毕竟AOSP都无压力，但是谁让今天心血来潮呢，走起。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
+<li><p>Unbutu系统的电脑或者虚拟机一台，配置越高越好(我用的是16.04)。</p>
+</li>
+<li><p>选择你喜欢的获取OpenJDK8源码的方法，我选择使用ZIP包，打开<a href="http://jdk.java.net/java-se-ri/8-MR3" target="_blank" rel="noopener">链接</a>，点击<strong>RI Source Code</strong>下的<strong>zip file</strong>。(使用此种方式获取源码是最方便快捷的，下载完zip文件记得校验md5)。</p>
+</li>
+<li><p>准备工作</p>
+<ul>
+<li><p>GNU make (版本须大于等于3.81)</p>
+</li>
+<li><p>Bootstrap JDK (也就是JDK7，源码的构建文档写的很明确，下载AZUL的即可，<a href="https://www.azul.com/downloads/?version=java-7-lts&amp;os=linux&amp;architecture=x86-64-bit&amp;package=jdk" target="_blank" rel="noopener">链接</a>)</p>
+<blockquote>
+<p><strong>Building JDK 8 requires use of a version of JDK 7 that is at Update 7 or newer. JDK 8 developers should not use JDK 8 as the boot JDK, to ensure that JDK 8 dependencies are not introduced into the parts of the system that are built with JDK 7.</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="编译流程"><a href="#编译流程" class="headerlink" title="编译流程"></a>编译流程</h1><ol>
+<li><p>解压源码，可以使用任何一款压缩包软件解压或者命令行，命令如下：</p>
+<p><code>unzip openjdk-8u41-src-b04-14_jan_2020.zip</code></p>
+</li>
+<li><p>进入源码目录：</p>
+<p><code>cd openjdk</code></p>
+</li>
+<li><p>安装需要的依赖：</p>
+<p><code>sudo apt-get install make gcc build-essential libasound2-dev libcups2-dev libxext-dev libxrender-dev libxtst-dev libxt-dev</code></p>
+<p>PS：之后报错需要什么就继续安装什么即可，因为我使用的机器可能之前有安装过编译需要的工具。</p>
+</li>
+<li><p>configure一下(因为我用的zsh，如果你用的bash，请自行将下面的zsh改为bash)：</p>
+<p><code>zsh configure --enable-debug --with-boot-jdk=/home/yourname/jdk7/zulu7.48.0.11-ca-jdk7.0.312-linux_x64 --with-num-cores=4 --with-jvm-variants=server --with-freetype-include=/usr/include/freetype2 --with-freetype-lib=/usr/lib/x86_64-linux-gnu</code></p>
+<p>参数介绍如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Bootstrap JDK的路径，我不信你的电脑里还装有JDK7，替换成你自己的JDK7路径</span></span><br><span class="line">--with-boot-jdk=/home/yourname/jdk7/zulu7.48.0.11-ca-jdk7.0.312-linux_x6</span><br><span class="line"><span class="comment"># 使用4个核心编译，如果你的电脑是8核改成8</span></span><br><span class="line">--with-num-cores=4</span><br><span class="line"><span class="comment"># JVM variants 支持server, client, kernel, zero , zeroshark</span></span><br><span class="line">--with-jvm-variants=server</span><br><span class="line"><span class="comment"># 指定freetype的include和lib目录，你的位置可能和我的不同，报相关错误的自行指定路径</span></span><br><span class="line">--with-freetype-include=/usr/include/freetype2 --with-freetype-lib=/usr/lib/x86_64-linux-gnu</span><br></pre></td></tr></table></figure>
+<p>成功执行会看到下面的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">A new configuration has been successfully created <span class="keyword">in</span></span><br><span class="line">/home/yourname/openjdk/build/linux-x86_64-normal-server-fastdebug</span><br><span class="line">using configure arguments <span class="string">'--enable-debug --with-boot-jdk=/home/yourname/jdk7/zulu7.48.0.11-ca-jdk7.0.312-linux_x64 --with-num-cores=4 --with-jvm-variants=server --with-freetype-include=/usr/include/freetype2 --with-freetype-lib=/usr/lib/x86_64-linux-gnu'</span>.</span><br><span class="line"></span><br><span class="line">Configuration summary:</span><br><span class="line">* Debug level:    fastdebug</span><br><span class="line">* JDK variant:    normal</span><br><span class="line">* JVM variants:   server</span><br><span class="line">* OpenJDK target: OS: linux, CPU architecture: x86, address length: 64</span><br><span class="line"></span><br><span class="line">Tools summary:</span><br><span class="line">* Boot JDK:       openjdk version <span class="string">"1.7.0_312"</span> OpenJDK Runtime Environment (Zulu 7.48.0.11-CA-linux64) (build 1.7.0_312-b01) OpenJDK 64-Bit Server VM (Zulu 7.48.0.11-CA-linux64) (build 24.312-b01, mixed mode)  (at /home/ddbes/jdk7/zulu7.48.0.11-ca-jdk7.0.312-linux_x64)</span><br><span class="line">* C Compiler:     gcc-5 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 version 20160609 (at /usr/bin/gcc-5)</span><br><span class="line">* C++ Compiler:   g++-5 (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 version 20160609 (at /usr/bin/g++-5)</span><br><span class="line"></span><br><span class="line">Build performance summary:</span><br><span class="line">* Cores to use:   4</span><br><span class="line">* Memory <span class="built_in">limit</span>:   7983 MB</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="5">
+<li><p>编译走起：</p>
+<p><code>make all DISABLE_HOTSPOT_OS_VERSION_CHECK=ok</code></p>
+<p>PS：<strong>DISABLE_HOTSPOT_OS_VERSION_CHECK=ok</strong>是为了屏蔽系统内核版本的检查，太旧的内核不行，当然太新的也不行，Makefile的官方注释如下</p>
+<blockquote>
+<p># We do not want people accidentally building on old systems (e.g. Linux 2.2.x,</p>
+<p># Solaris 2.5.1, 2.6).</p>
+<p># Disable this check by setting DISABLE_HOTSPOT_OS_VERSION_CHECK=ok.</p>
+</blockquote>
+</li>
+<li><p>几分钟的等待过后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">----- Build <span class="built_in">times</span> -------</span><br><span class="line">Start 2021-09-23 19:55:00</span><br><span class="line">End   2021-09-23 20:03:11</span><br><span class="line">00:00:18 corba</span><br><span class="line">00:00:11 demos</span><br><span class="line">00:01:28 docs</span><br><span class="line">00:03:18 hotspot</span><br><span class="line">00:00:20 images</span><br><span class="line">00:00:10 jaxp</span><br><span class="line">00:00:15 jaxws</span><br><span class="line">00:01:41 jdk</span><br><span class="line">00:00:20 langtools</span><br><span class="line">00:00:10 nashorn</span><br><span class="line">00:08:11 TOTAL</span><br><span class="line">-------------------------</span><br><span class="line">Finished building OpenJDK <span class="keyword">for</span> target <span class="string">'all'</span></span><br></pre></td></tr></table></figure>
+<p>总耗时8分钟多一点。</p>
+</li>
+<li><p>验证成果：</p>
+<p><code>cd build/linux-x86_64-normal-server-fastdebug/jdk/bin</code></p>
+<p><code>./java -version</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openjdk version <span class="string">"1.8.0-internal-fastdebug"</span></span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0-internal-fastdebug-damon_2021_09_23_19_54-b00)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 25.40-b25-fastdebug, mixed mode)</span><br></pre></td></tr></table></figure>
+<p>完结撒花</p>
+</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总体来说流程十分的顺利，如果编译过AOSP真的觉得编译OpenJDK太简单了😂，构建文档十分详细。</p>
+<p>墙裂不建议在MacOS上编译JDK8，因为MacOS的编译环境依赖XCode，版本差异巨大，clang和gcc之间的差异，include和lib的差异也很大，除非你用官方建议的骨灰版本的系统和XCode，否则估计遇坑连连，当然如果编译JDK12就会简单的多。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2021/09/23/编译OpenJDK8/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = '';
+var conf = '';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2021/08/22/OMV安装IYUUAutoReseed/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
